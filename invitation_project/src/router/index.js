@@ -13,6 +13,11 @@ const routes = [
     component: () => import('../views/InvitationView.vue')
   },
   {
+    path: '/acknowledge/:acknowledge_name',
+    name: 'AcknowledgementRoute',
+    component: () => import('../views/AcknowledgementView.vue')
+  },
+  {
     path: '/:pathMatch(.*)*',
     name: 'ErrorRoute',
     component: () => import('../views/ErrorView.vue')
