@@ -11,7 +11,8 @@
     "@amap/amap-jsapi-loader": "^1.0.1",
     "core-js": "^3.8.3",
     "vue": "^3.2.13",
-    "vue-router": "^4.0.3"
+    "vue-router": "^4.0.3",
+    "weixin-js-sdk": "^1.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

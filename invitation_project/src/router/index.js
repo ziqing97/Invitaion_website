@@ -8,6 +8,16 @@ const routes = [
     component: Home
   },
   {
+    path: '/newyearwish',
+    name: 'NewYearRoute',
+    component: () => import('../views/NewYear.vue')
+  },
+  {
+    path: '/moonfestivalwish',
+    name: 'MoonFestivalRoute',
+    component: () => import('../views/MoonFestival.vue')
+  },
+  {
     path: '/invitation/:invitation_name',
     name: 'InvitationRoute',
     component: () => import('../views/InvitationView.vue')
