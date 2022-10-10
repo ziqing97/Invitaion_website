@@ -1,8 +1,18 @@
 <template>
-  <div id="nav">
-    {{ gutstName }} 于 {{ invitationTime }} 被邀请参加高级座谈会
+  <div id="message">
+    尊敬的贵宾：您好！<br/>
+    诚邀出席 <br/>
+    贵宾：{{ gutstName }} <br/>
+    预定时间： {{ invitationTime }} <br/>
+    预定位置：雅间 <br/>
+    专属律师：龙成 <br/>
+    联系电话：*********** <br/>
+    盈科团队，为您服务
   </div>
-  <MapContainer></MapContainer>
+  <div>
+    <MapContainer></MapContainer>
+  </div>
+  
 </template>
 
 <script>
@@ -11,8 +21,8 @@ export default {
     name: "InvitationView",
     data() {
         return {
-            gutstName: "a",
-            invitationTime: "n"
+            gutstName: "",
+            invitationTime: ""
         };
     },
     mounted() {
@@ -38,3 +48,9 @@ export default {
     components: { MapContainer }
 }
 </script>
+
+<style scoped>
+#message{
+    text-align: left;
+}
+</style>
