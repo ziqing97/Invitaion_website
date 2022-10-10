@@ -1,5 +1,7 @@
 <template>
-  <div id="container" @click="toAmap">{{ initMap }}</div>
+  <div id="container" v-touch="toAmap">
+    {{ initMap }}
+  </div>
 </template>
 
 <script>
