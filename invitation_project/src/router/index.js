@@ -18,6 +18,16 @@ const routes = [
     component: () => import('../views/MoonFestival.vue')
   },
   {
+    path: '/addinvitation',
+    name: 'AddInvitationRoute',
+    component: () => import('../views/AddInvitation.vue')
+  },
+  {
+    path: '/AllInvitation',
+    name: 'AllInvitationRoute',
+    component: () => import('../views/AllInvitation.vue')
+  },
+  {
     path: '/invitation/:invitation_name',
     name: 'InvitationRoute',
     component: () => import('../views/InvitationView.vue')
