@@ -24,15 +24,15 @@ export default {
       }).then((AMap)=>{
           this.map = new AMap.Map("container",{  //设置地图容器id
             viewMode:"2D",    //是否为3D地图模式
-            zoom:12,           //初始化地图级别
-            center:[121.498586, 31.239637], //初始化地图中心点位置
+            zoom:20,           //初始化地图级别
+            center:[114.050778, 22.541596], //初始化地图中心点位置
           });
       }).catch(e=>{
         console.log(e);
       })
     },
     toAmap(){
-      window.location.href = "https://surl.amap.com/1Z44oAFd3oO"
+      window.location.href = "https://surl.amap.com/pFQHCsq109xd"
     }
   },
   mounted(){
