@@ -66,6 +66,15 @@ const routes = [
     }
   },
   {
+    path: '/addsuccess',
+    name: 'AddSuccess',
+    component: () => import('../views/AddSuccess.vue'),
+    meta: {
+      auth: true,
+      title: '所有邀请'
+    }
+  },
+  {
     path: '/:pathMatch(.*)*',
     name: 'ErrorRoute',
     component: () => import('../views/ErrorView.vue'),
