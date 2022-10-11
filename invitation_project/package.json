@@ -12,6 +12,7 @@
     "@vuepic/vue-datepicker": "^3.5.2",
     "axios": "^1.1.2",
     "core-js": "^3.8.3",
+    "sass-loader": "^13.1.0",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
     "vue3-touch-events": "^4.1.0",
