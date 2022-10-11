@@ -1,34 +1,30 @@
 <template>
 <div id="inputarea">
     <div id="datetimeinput">
-        <span>日期：</span>
+        <span>日期</span>
         <Datepicker v-model="date" :time-picker-component="timePicker" locale="cn" selectText="确定" cancelText="取消"></Datepicker> 
     </div>
     <div id="nameinput">
-        <span>姓名：</span> <br/>
-        <span></span>
-        <input v-model="customerName"><br/>
+        <span>姓名：</span><br/>
+        <input v-model="customerName"/>
     </div>
     <div id="guestcount">
         <span>人数：</span> <br/>
-        <span></span>
-        <input v-model="customerCount"><br/>
+        <input v-model="customerCount"/>
     </div>
     <div id="mainLawyer">
         <span>主办律师：</span> <br/>
-        <span></span>
-        <input v-model="mainLawyer"><br/>
+        <input v-model="mainLawyer"/>
     </div>
     <div id="teamAssistant">
         <span>团队助理：</span> <br/>
-        <span></span>
-        <input v-model="teamAssistant"><br/>
+        <input v-model="teamAssistant"/>
     </div>
     <div id="phoneNumber">
         <span>电话号码：</span> <br/>
-        <span></span>
-        <input v-model="phoneNumber"><br/>
+        <input v-model="phoneNumber"/><br/>
     </div>
+    <div>{{ customerName }}</div>
 </div>
 <button @click="showSuccess">确定</button>
 </template>
@@ -55,7 +51,27 @@ export default {
             timePicker
         }
     },
-    methods:{
+    data() {
+        return {
+            customerName: null,
+            customerCount: null,
+            mainLawyer: null,
+            teamAssistant: null,
+            phoneNumber: null
+        }
+    },
+    computed:{
+        generatedKey(){
+            var str = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+            var res = "";
+            for(var i = 0; i < 20 ; i ++) {
+                var id = Math.ceil(Math.random()*35);
+                res += str[id];
+            }
+            return res;
+        }
+    },
+    methods: {
         showSuccess(){
             this.$router.push({name: 'AddSuccess'})
         }
