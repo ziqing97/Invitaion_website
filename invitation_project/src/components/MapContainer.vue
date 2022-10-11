@@ -1,4 +1,10 @@
 <template>
+  <div id="wrap" v-touch="toAmap">
+    <tr>
+      <td><img src="../assets/pin.png" id="locate_icon" alt="Fender Rhodes" align="center"></td>
+      <td id="locationdescription">北京市盈科（深圳）律师事务所深圳市福田区鹏程一路广电金融中心30-32层</td>
+    </tr>
+  </div>
   <div id="container" v-touch="toAmap">
     {{ initMap }}
   </div>
@@ -13,6 +19,7 @@ export default {
   const map = shallowRef(null);
     return{
        map,
+       ShowPage: false
     }
   },
   methods:{
@@ -24,16 +31,25 @@ export default {
       }).then((AMap)=>{
           this.map = new AMap.Map("container",{  //设置地图容器id
             viewMode:"2D",    //是否为3D地图模式
-            zoom:20,           //初始化地图级别
+            zoom:17,           //初始化地图级别
             center:[114.050778, 22.541596], //初始化地图中心点位置
           });
+          var marker = new AMap.Marker({
+          position: new AMap.LngLat(114.050778, 22.541596),
+          title: '北京市盈科（深圳）律师事务所',
+          label: { 
+            content: '北京市盈科（深圳）律师事务所',
+            direction: 'top'
+          },
+          });
+      this.map.add(marker)
       }).catch(e=>{
         console.log(e);
-      })
+      });
     },
     toAmap(){
       window.location.href = "https://surl.amap.com/pFQHCsq109xd"
-    }
+    },
   },
   mounted(){
     //DOM初始化完成进行地图初始化
@@ -47,7 +63,19 @@ export default {
   margin: 10px auto 10px auto;
   width: 100%;
   height: 200px;
-  /*position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;*/
+  cursor: pointer
+}
+
+#wrap{
+  cursor: pointer;
+}
+
+#locate_icon{
+  
+  height: 2em;
+}
+
+#locationdescription{
+  text-align: left;
 }
 </style>
