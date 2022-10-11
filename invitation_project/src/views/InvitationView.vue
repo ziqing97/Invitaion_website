@@ -17,9 +17,11 @@
         祝您往返途中平安，心情舒畅！
     </div>
     <br/>
-    <div>
-        <MapContainer></MapContainer>
-    </div>
+    <Suspense>
+        <div>
+            <MapContainer></MapContainer>
+        </div>
+    </Suspense>
     <div>
         <img src="../assets/team.jpg" class="picture_intro">
     </div>
@@ -102,8 +104,6 @@ export default {
 #video{
     width: 100%;
 }
-
-
 
 #locationdescription{
     text-align: left;

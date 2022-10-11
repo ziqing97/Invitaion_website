@@ -2,7 +2,7 @@
   <div id="wrap" v-touch="toAmap">
     <tr>
       <td><img src="../assets/pin.png" id="locate_icon" alt="Fender Rhodes" align="center"></td>
-      <td id="locationdescription">北京市盈科（深圳）律师事务所深圳市福田区鹏程一路广电金融中心30-32层</td>
+      <td id="locationdescription">【北京市盈科（深圳）律师事务所】<br/>深圳市福田区鹏程一路广电金融中心30-32层</td>
     </tr>
   </div>
   <div id="container" v-touch="toAmap">
@@ -12,7 +12,7 @@
 
 <script>
 import AMapLoader from '@amap/amap-jsapi-loader';
-import { shallowRef } from '@vue/reactivity'
+import { shallowRef } from '@vue/reactivity';
 export default {
   name: 'MapComponent',
   setup(){
@@ -60,7 +60,6 @@ export default {
 
 <style  scoped>
 #container{
-  margin: 10px auto 10px auto;
   width: 100%;
   height: 200px;
   cursor: pointer
@@ -71,7 +70,6 @@ export default {
 }
 
 #locate_icon{
-  
   height: 2em;
 }
 
