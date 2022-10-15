@@ -73,7 +73,7 @@ export default {
     },
     methods: {
         showSuccess(){
-            this.$router.push({name: 'AddSuccess'})
+            this.$router.push({name: 'AddSuccess', params: { invitation_name: 'yuziqing'}}) // here should be a variable
         }
     }
 }

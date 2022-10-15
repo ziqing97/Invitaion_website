@@ -66,7 +66,7 @@ const routes = [
     }
   },
   {
-    path: '/addsuccess',
+    path: '/addsuccess/:invitation_name',
     name: 'AddSuccess',
     component: () => import('../views/AddSuccess.vue'),
     meta: {
