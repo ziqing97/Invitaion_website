@@ -22,50 +22,50 @@
 </template>
 
 <script>
-    import { computed, defineComponent } from 'vue';
+import { computed, defineComponent } from 'vue';
 
-    export default defineComponent({
-        emits: ['update:hours', 'update:minutes'],
-        props: {
-            hoursIncrement: { type: [Number, String], default: 1 },
-            minutesIncrement: { type: [Number, String], default: 1 },
-            is24: { type: Boolean, default: true },
-            hoursGridIncrement: { type: [String, Number], default: 1 },
-            minutesGridIncrement: { type: [String, Number], default: 5 },
-            range: { type: Boolean, default: false },
-            filters: { type: Object, default: () => ({}) },
-            minTime: { type: Object, default: () => ({}) },
-            maxTime: { type: Object, default: () => ({}) },
-            timePicker: { type: Boolean, default: false },
-            hours: { type: [Number, Array], default: 0 },
-            minutes: { type: [Number, Array], default: 0 },
-            customProps: { type: Object, default: null }
-        },
-        setup() {
-            // Generate array of hours
-            const hoursArray = computed(() => {
-                const arr = [];
-                for (let i = 0; i < 24; i++) {
-                    arr.push({ text: i < 10 ? `0${i}` : i, value: i });
-                }
-                return arr;
-            });
+export default defineComponent({
+    emits: ['update:hours', 'update:minutes'],
+    props: {
+        hoursIncrement: { type: [Number, String], default: 1 },
+        minutesIncrement: { type: [Number, String], default: 1 },
+        is24: { type: Boolean, default: true },
+        hoursGridIncrement: { type: [String, Number], default: 1 },
+        minutesGridIncrement: { type: [String, Number], default: 5 },
+        range: { type: Boolean, default: false },
+        filters: { type: Object, default: () => ({}) },
+        minTime: { type: Object, default: () => ({}) },
+        maxTime: { type: Object, default: () => ({}) },
+        timePicker: { type: Boolean, default: false },
+        hours: { type: [Number, Array], default: 0 },
+        minutes: { type: [Number, Array], default: 0 },
+        customProps: { type: Object, default: null }
+    },
+    setup() {
+        // Generate array of hours
+        const hoursArray = computed(() => {
+            const arr = [];
+            for (let i = 0; i < 24; i++) {
+                arr.push({ text: i < 10 ? `0${i}` : i, value: i });
+            }
+            return arr;
+        });
 
-            // Generate array of minutes
-            const minutesArray = computed(() => {
-                const arr = [];
-                for (let i = 0; i < 60; i++) {
-                    arr.push({ text: i < 10 ? `0${i}` : i, value: i });
-                }
-                return arr;
-            });
+        // Generate array of minutes
+        const minutesArray = computed(() => {
+            const arr = [];
+            for (let i = 0; i < 60; i++) {
+                arr.push({ text: i < 10 ? `0${i}` : i, value: i });
+            }
+            return arr;
+        });
 
-            return {
-                hoursArray,
-                minutesArray,
-            };
-        },
-    });
+        return {
+            hoursArray,
+            minutesArray,
+        };
+    },
+});
 </script>
 
 <style slope>
