@@ -2,7 +2,7 @@
   <div>
     <div id="video_intro">
         <video id="video" autobuffer controls webkit-playsinline playsinline x5-playsinline>
-            <source src="../assets/welcome.mp4" type="video/mp4">
+            <source src="../assets/welcome.mp4#t=0.8" type="video/mp4">
         </video>
     </div>
     <div id="message">
@@ -22,14 +22,13 @@
             <MapContainer></MapContainer>
         </div>
     </Suspense>
+    <br/>
+    <br/>
     <div>
         <img src="../assets/team.jpg" class="picture_intro">
     </div>
     <div id="intro">
-        专业保障：团队深耕商事诉讼领域<br/>
-        品质保障：快速响应，真正每天18小时待命，高效响应委托人需求<br/>
-        绝对保密：签署完善的委托合同，严守客户秘密 <br/>
-        可视化服务：团队化、流程化的科学管理，完善的文档数据
+        <img src="../assets/intro.png" class="picture_intro">
     </div>
     <div>
         <img src="../assets/locInChina.jpg" class="picture_intro">
