@@ -1,2 +1,3 @@
 node_modules/*
 backend/BackUp/*
+backend/__pycache__/*
