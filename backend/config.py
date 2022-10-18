@@ -1,7 +1,7 @@
 DIALECT = 'mysql'
 DRIVER = 'pymysql'
 USERNAME = 'root'
-PASSWORD = 'JUNnuo_1015'
+PASSWORD = 'GONGGEnice1314!'
 HOST = '127.0.0.1'
 PORT = '3306'
 DATABASE = 'backend'
