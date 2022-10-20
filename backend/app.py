@@ -61,6 +61,15 @@ def get_invitation_in_id():
     return json.dumps(result, default=str)
 
 # add a new invitation
-@app.route('/invitation/add', methods=['POST'])
+@app.route('/invitation/add', methods=['POST','GET'])
 def add_new_invitation():
-    a=1
+    if not request.form['invitation_id'] or not request.form['guest_name'] or not request.form['invitation_time'] \
+        or not request.form['guest_count'] or not request.form['contact_number'] or not request.form['main_lawyer_name'] \
+        or not request.form['assistant_name']:
+        flash('有内容为空！')
+    else:
+        invitation = Invitation(request.form['invitation_id'],request.form['guest_name'],request.form['invitation_time'],\
+        request.form['guest_count'],request.form['contact_number'],request.form['main_lawyer_name'],\
+        request.form['assistant_name'])
+
+        db.session.add(invitation)
