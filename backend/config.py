@@ -1,10 +1,10 @@
 DIALECT = 'mysql'
 DRIVER = 'pymysql'
 USERNAME = 'root'
-PASSWORD = 'JUNnuo_1015'
+PASSWORD = 'ziqingyu'
 HOST = '127.0.0.1'
 PORT = '3306'
-DATABASE = 'backend'
+DATABASE = 'invitation_junnuo'
 
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 
