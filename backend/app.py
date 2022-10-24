@@ -73,5 +73,3 @@ def add_new_invitation():
         request.form['assistant_name'])
 
         db.session.add(invitation)
-
-initdb()
