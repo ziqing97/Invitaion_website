@@ -24,8 +24,8 @@ class Invitation(db.Model):
     invitation_time = db.Column(db.String(20), nullable=False)
     guest_count = db.Column(db.Integer, nullable=False)
     contact_number = db.Column(db.Integer, nullable=False)
-    main_lawyer_name = db.Column(db.String, nullable=False)
-    assistant_name = db.Column(db.String, nullable=True)
+    main_lawyer_name = db.Column(db.String(20), nullable=False)
+    assistant_name = db.Column(db.String(20), nullable=True)
 
 class Worker(db.Model):
     __tablename__ = 'workers'
