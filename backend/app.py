@@ -75,4 +75,5 @@ def add_new_invitation():
 
         db.session.add(invitation)
 
-initdb()
+with app.app_context():
+    initdb()
