@@ -43,6 +43,7 @@ def get_all_invitations():
     result = []
     for data in sqlData:
         result.append(data.to_dict()) 
+    print(result)
     return json.dumps(result, default=str)
 
 # return the invitation with given id
@@ -73,3 +74,5 @@ def add_new_invitation():
         request.form['assistant_name'])
 
         db.session.add(invitation)
+
+initdb()
