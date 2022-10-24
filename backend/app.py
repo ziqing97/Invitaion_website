@@ -43,6 +43,7 @@ def get_all_invitations():
     result = []
     for data in sqlData:
         result.append(data.to_dict())
+    print(sqlData)
     return json.dumps(result, default=str)
 
 # return the invitation with given id
