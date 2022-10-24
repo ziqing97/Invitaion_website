@@ -75,9 +75,4 @@ def add_new_invitation():
 
         db.session.add(invitation)
 
-with app.app_context():
-    sqlData = Invitation.query.order_by(Invitation.invitation_time.desc()).all()
-    result = []
-    for data in sqlData:
-        result.append(data.to_dict())
-    print(sqlData)
+#with app.app_context():
