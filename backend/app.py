@@ -32,6 +32,10 @@ class Worker(db.Model):
     worker_id = db.Column(db.Integer, primary_key=True, nullable=False)
     worker_name = db.Column(db.String(20), nullable=False)
 
+def initdb():
+    db.create_all()
+    click.echo('Intialized database.')
+
 # return all invitations order by time
 @app.route('/invitation/all', methods=['GET'])
 def get_all_invitations():
@@ -71,4 +75,4 @@ def add_new_invitation():
 
         db.session.add(invitation)
 
-print(1)
+initdb()
