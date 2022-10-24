@@ -74,9 +74,3 @@ def add_new_invitation():
         request.form['assistant_name'])
 
         db.session.add(invitation)
-
-sqlData = Invitation.query.order_by(Invitation.invitation_time.desc()).all()
-result = []
-for data in sqlData:
-    result.append(data.to_dict())
-print(sqlData)
