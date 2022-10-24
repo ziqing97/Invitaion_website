@@ -34,7 +34,7 @@ class Worker(db.Model):
 
 def initdb():
     db.create_all()
-    click.echo('Intialized database.')
+    #click.echo('Intialized database.')
 
 # return all invitations order by time
 @app.route('/invitation/all', methods=['GET'])
