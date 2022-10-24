@@ -42,8 +42,7 @@ def get_all_invitations():
     sqlData = Invitation.query.order_by(Invitation.invitation_time.desc()).all()
     result = []
     for data in sqlData:
-        result.append(data.to_dict()) 
-    print(result)
+        result.append(data.to_dict())
     return json.dumps(result, default=str)
 
 # return the invitation with given id
