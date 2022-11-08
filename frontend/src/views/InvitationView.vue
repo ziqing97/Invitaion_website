@@ -41,10 +41,12 @@
 
 <script>
 import MapContainer from '@/components/MapContainer.vue'
+import axios from 'axios'
 export default {
     name: "InvitationView",
     data() {
         return {
+            data: {},
             gutstName: null,
             invitationTime: null,
             guestCount: null,
@@ -60,26 +62,22 @@ export default {
         callPhone () {
             window.location.href = 'tel://' + this.contactNumber;
         },
+        
         getInviInfo() {
-            var invitationGuestDict = {
-                longcheng: "龙成",
-                liuliyi: "刘俐伊",
-                yuziqing: "余紫清"
-            };
-            var invitationTimeDict = {
-                longcheng: "2020-10-03",
-                liuliyi: "2020-10-01",
-                yuziqing: "2020-10-02"
-            };
-            var contactDict = {
-                longcheng: "123456789",
-                liuliyi: "+4915201028696",
-                yuziqing: "13873246454"
-            };
-            var key = this.$route.params.invitation_name;
-            this.gutstName = invitationGuestDict[key];
-            this.invitationTime = invitationTimeDict[key];
-            this.contactNumber = contactDict[key]
+            axios.post('/invitation/get', 'invitation_id=' + this.$route.params.invitation_name).then(
+                res => {
+                this.data = res.data
+                this.gutstName = res.data.guest_name
+                this.invitationTime = res.data.invitation_time
+                this.guestCount = res.data.guest_count
+                this.mainLawyer = res.data.main_lawyer_name
+                this.teamAssistant = res.data.assistant_name
+                this.contactNumber = res.data.contact_number
+                console.log(res)
+                }
+            ).catch(res => {
+                console.log(res)
+            })
         }
     },
     components: { MapContainer }

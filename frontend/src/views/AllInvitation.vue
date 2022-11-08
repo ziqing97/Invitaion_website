@@ -1,20 +1,36 @@
 <template>
   <div>
     <li id="all_inv_list" v-for="item in AllInvitation" v-bind:key="item">
-      <router-link :to="{ name: 'InvitationRoute', params: { invitation_name: item }}">{{item}}</router-link>
+      <router-link :to="{ name: 'InvitationRoute', params: { invitation_name: item.invitation_id }}">{{ item.invitation_time }}: {{item.guest_name }}</router-link><br/>
     </li>
     
   </div>
   </template>
   
   <script>
-  // import axios from 'axios'
+  import axios from 'axios'
   export default {
     name: 'AllInvitation',
     data(){
       return{
-        AllInvitation:['yuziqing','liuliyi','longcheng']
+        AllInvitation: {}
       }
+    },
+    mounted () {
+      this.getAllInvi()
+    },
+    methods:{
+      getAllInvi () {
+        axios.get('/invitation/all', 'category_name=' + this.$route.params.category_name).then(
+        res => {
+          this.AllInvitation = res.data
+          console.log(res)
+        }
+        ).catch(res => {
+          console.log(res)
+        })
+      }
+      
     }
   }
   </script>
