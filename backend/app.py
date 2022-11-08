@@ -52,6 +52,10 @@ def get_all_invitations():
     print(sqlData)
     return json.dumps(result, default=str)
 
+@app.route('/MP_verify_rAfegUtbODZEgsbj.txt', methods=['GET'])
+def return_weixin_api():
+    return "rAfegUtbODZEgsbj"
+    
 # return the invitation with given id
 @app.route('/invitation/get', methods=['POST'])
 def get_invitation_in_id():
