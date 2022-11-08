@@ -1,0 +1,163 @@
+[2022-11-08 20:46:27 +0800] [90161] [INFO] Starting gunicorn 20.1.0
+[2022-11-08 20:46:27 +0800] [90161] [INFO] Listening at: http://0.0.0.0:5000 (90161)
+[2022-11-08 20:46:27 +0800] [90161] [INFO] Using worker: sync
+[2022-11-08 20:46:27 +0800] [90162] [INFO] Booting worker with pid: 90162
+[2022-11-08 20:46:27 +0800] [90163] [INFO] Booting worker with pid: 90163
+[2022-11-08 20:46:27 +0800] [90164] [INFO] Booting worker with pid: 90164
+[2022-11-08 20:46:27 +0800] [90165] [INFO] Booting worker with pid: 90165
+[2022-11-08 20:46:45 +0800] [90165] [INFO] Worker exiting (pid: 90165)
+[2022-11-08 20:46:45 +0800] [90163] [INFO] Worker exiting (pid: 90163)
+[2022-11-08 20:46:45 +0800] [90164] [INFO] Worker exiting (pid: 90164)
+[2022-11-08 20:46:45 +0800] [90161] [INFO] Handling signal: int
+[2022-11-08 20:46:48 +0800] [90161] [WARNING] Worker with pid 90164 was terminated due to signal 3
+[2022-11-08 20:46:48 +0800] [90161] [WARNING] Worker with pid 90165 was terminated due to signal 3
+[2022-11-08 20:46:48 +0800] [90161] [WARNING] Worker with pid 90163 was terminated due to signal 3
+[2022-11-08 20:46:51 +0800] [90161] [INFO] Shutting down: Master
+[2022-11-08 20:47:50 +0800] [90303] [INFO] Starting gunicorn 20.1.0
+[2022-11-08 20:47:50 +0800] [90303] [INFO] Listening at: http://0.0.0.0:5000 (90303)
+[2022-11-08 20:47:50 +0800] [90303] [INFO] Using worker: sync
+[2022-11-08 20:47:50 +0800] [90304] [INFO] Booting worker with pid: 90304
+[2022-11-08 20:47:50 +0800] [90305] [INFO] Booting worker with pid: 90305
+[2022-11-08 20:47:50 +0800] [90306] [INFO] Booting worker with pid: 90306
+[2022-11-08 20:47:50 +0800] [90307] [INFO] Booting worker with pid: 90307
+[2022-11-08 20:48:43 +0800] [90307] [INFO] Worker exiting (pid: 90307)
+[2022-11-08 20:48:43 +0800] [90306] [INFO] Worker exiting (pid: 90306)
+[2022-11-08 20:48:43 +0800] [90304] [INFO] Worker exiting (pid: 90304)
+[2022-11-08 20:48:43 +0800] [90305] [INFO] Worker exiting (pid: 90305)
+[2022-11-08 20:48:43 +0800] [90303] [INFO] Handling signal: int
+[2022-11-08 20:48:44 +0800] [90303] [WARNING] Worker with pid 90304 was terminated due to signal 3
+[2022-11-08 20:48:44 +0800] [90303] [WARNING] Worker with pid 90307 was terminated due to signal 3
+[2022-11-08 20:48:44 +0800] [90303] [WARNING] Worker with pid 90306 was terminated due to signal 3
+[2022-11-08 20:48:44 +0800] [90303] [WARNING] Worker with pid 90305 was terminated due to signal 3
+[2022-11-08 20:48:44 +0800] [90303] [INFO] Shutting down: Master
+[2022-11-08 20:56:54 +0800] [90497] [INFO] Starting gunicorn 20.1.0
+[2022-11-08 20:56:54 +0800] [90497] [ERROR] Retrying in 1 second.
+[2022-11-08 20:56:55 +0800] [90497] [ERROR] Retrying in 1 second.
+[2022-11-08 20:56:56 +0800] [90497] [ERROR] Retrying in 1 second.
+[2022-11-08 20:56:57 +0800] [90497] [ERROR] Retrying in 1 second.
+[2022-11-08 20:56:58 +0800] [90497] [ERROR] Retrying in 1 second.
+[2022-11-08 20:56:59 +0800] [90497] [ERROR] Can't connect to ('0.0.0.0', 80)
+[2022-11-08 20:57:09 +0800] [90511] [INFO] Starting gunicorn 20.1.0
+[2022-11-08 20:57:09 +0800] [90511] [INFO] Listening at: http://0.0.0.0:80 (90511)
+[2022-11-08 20:57:09 +0800] [90511] [INFO] Using worker: sync
+[2022-11-08 20:57:09 +0800] [90512] [INFO] Booting worker with pid: 90512
+[2022-11-08 20:57:09 +0800] [90513] [INFO] Booting worker with pid: 90513
+[2022-11-08 20:57:09 +0800] [90514] [INFO] Booting worker with pid: 90514
+[2022-11-08 20:57:09 +0800] [90515] [INFO] Booting worker with pid: 90515
+[2022-11-08 20:57:09 +0800] [90512] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/usr/lib/python3/dist-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/usr/lib/python3/dist-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/lib/python3/dist-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/lib/python3/dist-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/usr/lib/python3/dist-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/lib/python3/dist-packages/gunicorn/util.py", line 384, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ziqing/Invitaion_website/backend/app.py", line 3, in <module>
+    from flask_sqlalchemy import SQLAlchemy
+ModuleNotFoundError: No module named 'flask_sqlalchemy'
+[2022-11-08 20:57:09 +0800] [90512] [INFO] Worker exiting (pid: 90512)
+[2022-11-08 20:57:10 +0800] [90513] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/usr/lib/python3/dist-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/usr/lib/python3/dist-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/lib/python3/dist-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/lib/python3/dist-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/usr/lib/python3/dist-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/lib/python3/dist-packages/gunicorn/util.py", line 384, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ziqing/Invitaion_website/backend/app.py", line 3, in <module>
+    from flask_sqlalchemy import SQLAlchemy
+ModuleNotFoundError: No module named 'flask_sqlalchemy'
+[2022-11-08 20:57:10 +0800] [90513] [INFO] Worker exiting (pid: 90513)
+[2022-11-08 20:57:10 +0800] [90514] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/usr/lib/python3/dist-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/usr/lib/python3/dist-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/lib/python3/dist-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/lib/python3/dist-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/usr/lib/python3/dist-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/lib/python3/dist-packages/gunicorn/util.py", line 384, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ziqing/Invitaion_website/backend/app.py", line 3, in <module>
+    from flask_sqlalchemy import SQLAlchemy
+ModuleNotFoundError: No module named 'flask_sqlalchemy'
+[2022-11-08 20:57:10 +0800] [90514] [INFO] Worker exiting (pid: 90514)
+[2022-11-08 20:57:10 +0800] [90515] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/usr/lib/python3/dist-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/usr/lib/python3/dist-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/lib/python3/dist-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/lib/python3/dist-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/usr/lib/python3/dist-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/lib/python3/dist-packages/gunicorn/util.py", line 384, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ziqing/Invitaion_website/backend/app.py", line 3, in <module>
+    from flask_sqlalchemy import SQLAlchemy
+ModuleNotFoundError: No module named 'flask_sqlalchemy'
+[2022-11-08 20:57:10 +0800] [90515] [INFO] Worker exiting (pid: 90515)
+[2022-11-08 20:57:10 +0800] [90511] [WARNING] Worker with pid 90515 was terminated due to signal 15
+[2022-11-08 20:57:10 +0800] [90511] [WARNING] Worker with pid 90513 was terminated due to signal 15
+[2022-11-08 20:57:10 +0800] [90511] [WARNING] Worker with pid 90514 was terminated due to signal 15
+[2022-11-08 20:57:10 +0800] [90511] [INFO] Shutting down: Master
+[2022-11-08 20:57:10 +0800] [90511] [INFO] Reason: Worker failed to boot.

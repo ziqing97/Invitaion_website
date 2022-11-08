@@ -1,14 +1,20 @@
 from sre_constants import SUCCESS
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from flask import request
+from flask import request,url_for,render_template
 import json
 
 import config
 
-app = Flask(__name__)
+app = Flask(__name__,static_folder="../frontend/dist/",static_url_path="/",template_folder="../frontend/dist/")
 app.config.from_object(config)
 db = SQLAlchemy(app)
+
+
+# home page
+@app.route("/",methods=["GET"])
+def homme_page():
+    return render_template("index.html")
 
 class Todict:
     def to_dict(self):

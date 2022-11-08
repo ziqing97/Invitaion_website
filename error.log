@@ -1,0 +1,689 @@
+[2022-11-08 19:53:29 +0800] [88683] [INFO] Starting gunicorn 20.1.0
+[2022-11-08 19:53:29 +0800] [88683] [INFO] Listening at: http://0.0.0.0:5000 (88683)
+[2022-11-08 19:53:29 +0800] [88683] [INFO] Using worker: sync
+[2022-11-08 19:53:29 +0800] [88684] [INFO] Booting worker with pid: 88684
+[2022-11-08 19:53:29 +0800] [88684] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ziqing/Invitaion_website/manage.py", line 1, in <module>
+    from backend import app
+  File "/home/ziqing/Invitaion_website/backend/__init__.py", line 1, in <module>
+    from app import app
+ModuleNotFoundError: No module named 'app'
+[2022-11-08 19:53:29 +0800] [88684] [INFO] Worker exiting (pid: 88684)
+[2022-11-08 19:53:29 +0800] [88685] [INFO] Booting worker with pid: 88685
+[2022-11-08 19:53:29 +0800] [88685] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ziqing/Invitaion_website/manage.py", line 1, in <module>
+    from backend import app
+  File "/home/ziqing/Invitaion_website/backend/__init__.py", line 1, in <module>
+    from app import app
+ModuleNotFoundError: No module named 'app'
+[2022-11-08 19:53:29 +0800] [88685] [INFO] Worker exiting (pid: 88685)
+[2022-11-08 19:53:29 +0800] [88683] [WARNING] Worker with pid 88685 was terminated due to signal 15
+[2022-11-08 19:53:29 +0800] [88683] [INFO] Shutting down: Master
+[2022-11-08 19:53:29 +0800] [88683] [INFO] Reason: Worker failed to boot.
+[2022-11-08 19:55:32 +0800] [88742] [INFO] Starting gunicorn 20.1.0
+[2022-11-08 19:55:32 +0800] [88742] [INFO] Listening at: http://0.0.0.0:5000 (88742)
+[2022-11-08 19:55:32 +0800] [88742] [INFO] Using worker: sync
+[2022-11-08 19:55:32 +0800] [88743] [INFO] Booting worker with pid: 88743
+[2022-11-08 19:55:32 +0800] [88744] [INFO] Booting worker with pid: 88744
+[2022-11-08 19:55:32 +0800] [88745] [INFO] Booting worker with pid: 88745
+[2022-11-08 19:55:32 +0800] [88746] [INFO] Booting worker with pid: 88746
+[2022-11-08 19:55:34 +0800] [88746] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ziqing/Invitaion_website/manage.py", line 1, in <module>
+    from backend import app
+  File "/home/ziqing/Invitaion_website/backend/__init__.py", line 1, in <module>
+    from .app import app
+  File "/home/ziqing/Invitaion_website/backend/app.py", line 11, in <module>
+    db = SQLAlchemy(app)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 219, in __init__
+    self.init_app(app)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 301, in init_app
+    raise RuntimeError(
+RuntimeError: Either 'SQLALCHEMY_DATABASE_URI' or 'SQLALCHEMY_BINDS' must be set.
+[2022-11-08 19:55:34 +0800] [88746] [INFO] Worker exiting (pid: 88746)
+[2022-11-08 19:55:34 +0800] [88743] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ziqing/Invitaion_website/manage.py", line 1, in <module>
+    from backend import app
+  File "/home/ziqing/Invitaion_website/backend/__init__.py", line 1, in <module>
+    from .app import app
+  File "/home/ziqing/Invitaion_website/backend/app.py", line 11, in <module>
+    db = SQLAlchemy(app)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 219, in __init__
+    self.init_app(app)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 301, in init_app
+    raise RuntimeError(
+RuntimeError: Either 'SQLALCHEMY_DATABASE_URI' or 'SQLALCHEMY_BINDS' must be set.
+[2022-11-08 19:55:34 +0800] [88745] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ziqing/Invitaion_website/manage.py", line 1, in <module>
+    from backend import app
+  File "/home/ziqing/Invitaion_website/backend/__init__.py", line 1, in <module>
+    from .app import app
+  File "/home/ziqing/Invitaion_website/backend/app.py", line 11, in <module>
+    db = SQLAlchemy(app)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 219, in __init__
+    self.init_app(app)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 301, in init_app
+    raise RuntimeError(
+RuntimeError: Either 'SQLALCHEMY_DATABASE_URI' or 'SQLALCHEMY_BINDS' must be set.
+[2022-11-08 19:55:34 +0800] [88743] [INFO] Worker exiting (pid: 88743)
+[2022-11-08 19:55:34 +0800] [88745] [INFO] Worker exiting (pid: 88745)
+[2022-11-08 19:55:34 +0800] [88744] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ziqing/Invitaion_website/manage.py", line 1, in <module>
+    from backend import app
+  File "/home/ziqing/Invitaion_website/backend/__init__.py", line 1, in <module>
+    from .app import app
+  File "/home/ziqing/Invitaion_website/backend/app.py", line 11, in <module>
+    db = SQLAlchemy(app)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 219, in __init__
+    self.init_app(app)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 301, in init_app
+    raise RuntimeError(
+RuntimeError: Either 'SQLALCHEMY_DATABASE_URI' or 'SQLALCHEMY_BINDS' must be set.
+[2022-11-08 19:55:34 +0800] [88744] [INFO] Worker exiting (pid: 88744)
+[2022-11-08 19:56:06 +0800] [88742] [INFO] Shutting down: Master
+[2022-11-08 19:56:06 +0800] [88742] [INFO] Reason: Worker failed to boot.
+[2022-11-08 19:59:02 +0800] [88940] [INFO] Starting gunicorn 20.1.0
+[2022-11-08 19:59:02 +0800] [88940] [INFO] Listening at: http://0.0.0.0:5000 (88940)
+[2022-11-08 19:59:02 +0800] [88940] [INFO] Using worker: sync
+[2022-11-08 19:59:02 +0800] [88941] [INFO] Booting worker with pid: 88941
+[2022-11-08 19:59:02 +0800] [88942] [INFO] Booting worker with pid: 88942
+[2022-11-08 19:59:02 +0800] [88943] [INFO] Booting worker with pid: 88943
+[2022-11-08 19:59:02 +0800] [88944] [INFO] Booting worker with pid: 88944
+[2022-11-08 19:59:03 +0800] [88942] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ziqing/Invitaion_website/manage.py", line 1, in <module>
+    from backend import app
+  File "/home/ziqing/Invitaion_website/backend/app.py", line 11, in <module>
+    db = SQLAlchemy(app)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 219, in __init__
+    self.init_app(app)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 301, in init_app
+    raise RuntimeError(
+RuntimeError: Either 'SQLALCHEMY_DATABASE_URI' or 'SQLALCHEMY_BINDS' must be set.
+[2022-11-08 19:59:03 +0800] [88942] [INFO] Worker exiting (pid: 88942)
+[2022-11-08 19:59:03 +0800] [88941] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ziqing/Invitaion_website/manage.py", line 1, in <module>
+    from backend import app
+  File "/home/ziqing/Invitaion_website/backend/app.py", line 11, in <module>
+    db = SQLAlchemy(app)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 219, in __init__
+    self.init_app(app)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 301, in init_app
+    raise RuntimeError(
+RuntimeError: Either 'SQLALCHEMY_DATABASE_URI' or 'SQLALCHEMY_BINDS' must be set.
+[2022-11-08 19:59:03 +0800] [88941] [INFO] Worker exiting (pid: 88941)
+[2022-11-08 19:59:04 +0800] [88943] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ziqing/Invitaion_website/manage.py", line 1, in <module>
+    from backend import app
+  File "/home/ziqing/Invitaion_website/backend/app.py", line 11, in <module>
+    db = SQLAlchemy(app)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 219, in __init__
+    self.init_app(app)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 301, in init_app
+    raise RuntimeError(
+RuntimeError: Either 'SQLALCHEMY_DATABASE_URI' or 'SQLALCHEMY_BINDS' must be set.
+[2022-11-08 19:59:04 +0800] [88943] [INFO] Worker exiting (pid: 88943)
+[2022-11-08 19:59:04 +0800] [88944] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ziqing/Invitaion_website/manage.py", line 1, in <module>
+    from backend import app
+  File "/home/ziqing/Invitaion_website/backend/app.py", line 11, in <module>
+    db = SQLAlchemy(app)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 219, in __init__
+    self.init_app(app)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 301, in init_app
+    raise RuntimeError(
+RuntimeError: Either 'SQLALCHEMY_DATABASE_URI' or 'SQLALCHEMY_BINDS' must be set.
+[2022-11-08 19:59:04 +0800] [88944] [INFO] Worker exiting (pid: 88944)
+Traceback (most recent call last):
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/arbiter.py", line 209, in run
+    self.sleep()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/arbiter.py", line 357, in sleep
+    ready = select.select([self.PIPE[0]], [], [], 1.0)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/arbiter.py", line 240, in handle_chld
+    def handle_chld(self, sig, frame):
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+    self.reap_workers()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/bin/gunicorn", line 8, in <module>
+    sys.exit(run())
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 67, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/base.py", line 231, in run
+    super().run()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/base.py", line 72, in run
+    Arbiter(self).run()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/arbiter.py", line 229, in run
+    self.halt(reason=inst.reason, exit_status=inst.exit_status)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/arbiter.py", line 342, in halt
+    self.stop()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/arbiter.py", line 388, in stop
+    limit = time.time() + self.cfg.graceful_timeout
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/config.py", line 64, in __getattr__
+    def __getattr__(self, name):
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+    self.reap_workers()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+[2022-11-08 20:00:18 +0800] [88979] [INFO] Starting gunicorn 20.1.0
+[2022-11-08 20:00:18 +0800] [88979] [INFO] Listening at: http://0.0.0.0:5000 (88979)
+[2022-11-08 20:00:18 +0800] [88979] [INFO] Using worker: sync
+[2022-11-08 20:00:18 +0800] [88980] [INFO] Booting worker with pid: 88980
+[2022-11-08 20:00:18 +0800] [88981] [INFO] Booting worker with pid: 88981
+[2022-11-08 20:00:18 +0800] [88982] [INFO] Booting worker with pid: 88982
+[2022-11-08 20:00:18 +0800] [88983] [INFO] Booting worker with pid: 88983
+[2022-11-08 20:00:20 +0800] [88981] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ziqing/Invitaion_website/manage.py", line 1, in <module>
+    from backend.app import app
+  File "/home/ziqing/Invitaion_website/backend/app.py", line 11, in <module>
+    db = SQLAlchemy(app)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 219, in __init__
+    self.init_app(app)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 301, in init_app
+    raise RuntimeError(
+RuntimeError: Either 'SQLALCHEMY_DATABASE_URI' or 'SQLALCHEMY_BINDS' must be set.
+[2022-11-08 20:00:20 +0800] [88981] [INFO] Worker exiting (pid: 88981)
+[2022-11-08 20:00:20 +0800] [88982] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ziqing/Invitaion_website/manage.py", line 1, in <module>
+    from backend.app import app
+  File "/home/ziqing/Invitaion_website/backend/app.py", line 11, in <module>
+    db = SQLAlchemy(app)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 219, in __init__
+    self.init_app(app)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 301, in init_app
+    raise RuntimeError(
+RuntimeError: Either 'SQLALCHEMY_DATABASE_URI' or 'SQLALCHEMY_BINDS' must be set.
+[2022-11-08 20:00:20 +0800] [88982] [INFO] Worker exiting (pid: 88982)
+[2022-11-08 20:00:20 +0800] [88983] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ziqing/Invitaion_website/manage.py", line 1, in <module>
+    from backend.app import app
+  File "/home/ziqing/Invitaion_website/backend/app.py", line 11, in <module>
+    db = SQLAlchemy(app)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 219, in __init__
+    self.init_app(app)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 301, in init_app
+    raise RuntimeError(
+RuntimeError: Either 'SQLALCHEMY_DATABASE_URI' or 'SQLALCHEMY_BINDS' must be set.
+[2022-11-08 20:00:20 +0800] [88983] [INFO] Worker exiting (pid: 88983)
+[2022-11-08 20:00:20 +0800] [88980] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ziqing/Invitaion_website/manage.py", line 1, in <module>
+    from backend.app import app
+  File "/home/ziqing/Invitaion_website/backend/app.py", line 11, in <module>
+    db = SQLAlchemy(app)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 219, in __init__
+    self.init_app(app)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 301, in init_app
+    raise RuntimeError(
+RuntimeError: Either 'SQLALCHEMY_DATABASE_URI' or 'SQLALCHEMY_BINDS' must be set.
+[2022-11-08 20:00:20 +0800] [88980] [INFO] Worker exiting (pid: 88980)
+[2022-11-08 20:00:21 +0800] [88979] [WARNING] Worker with pid 88982 was terminated due to signal 15
+[2022-11-08 20:00:21 +0800] [88979] [WARNING] Worker with pid 88983 was terminated due to signal 15
+[2022-11-08 20:00:21 +0800] [88979] [WARNING] Worker with pid 88980 was terminated due to signal 15
+[2022-11-08 20:00:21 +0800] [88979] [INFO] Shutting down: Master
+[2022-11-08 20:00:21 +0800] [88979] [INFO] Reason: Worker failed to boot.
+[2022-11-08 20:05:08 +0800] [89017] [INFO] Starting gunicorn 20.1.0
+[2022-11-08 20:05:08 +0800] [89017] [INFO] Listening at: http://0.0.0.0:5000 (89017)
+[2022-11-08 20:05:08 +0800] [89017] [INFO] Using worker: sync
+[2022-11-08 20:05:08 +0800] [89018] [INFO] Booting worker with pid: 89018
+[2022-11-08 20:05:08 +0800] [89020] [INFO] Booting worker with pid: 89020
+[2022-11-08 20:05:08 +0800] [89019] [INFO] Booting worker with pid: 89019
+[2022-11-08 20:05:08 +0800] [89021] [INFO] Booting worker with pid: 89021
+[2022-11-08 20:05:11 +0800] [89019] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ziqing/Invitaion_website/manage.py", line 1, in <module>
+    from backend.app import app
+  File "/home/ziqing/Invitaion_website/backend/app.py", line 12, in <module>
+    db.init_app(app)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 301, in init_app
+    raise RuntimeError(
+RuntimeError: Either 'SQLALCHEMY_DATABASE_URI' or 'SQLALCHEMY_BINDS' must be set.
+[2022-11-08 20:05:11 +0800] [89021] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ziqing/Invitaion_website/manage.py", line 1, in <module>
+    from backend.app import app
+  File "/home/ziqing/Invitaion_website/backend/app.py", line 12, in <module>
+    db.init_app(app)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 301, in init_app
+    raise RuntimeError(
+RuntimeError: Either 'SQLALCHEMY_DATABASE_URI' or 'SQLALCHEMY_BINDS' must be set.
+[2022-11-08 20:05:11 +0800] [89020] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ziqing/Invitaion_website/manage.py", line 1, in <module>
+    from backend.app import app
+  File "/home/ziqing/Invitaion_website/backend/app.py", line 12, in <module>
+    db.init_app(app)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 301, in init_app
+    raise RuntimeError(
+RuntimeError: Either 'SQLALCHEMY_DATABASE_URI' or 'SQLALCHEMY_BINDS' must be set.
+[2022-11-08 20:05:11 +0800] [89021] [INFO] Worker exiting (pid: 89021)
+[2022-11-08 20:05:11 +0800] [89020] [INFO] Worker exiting (pid: 89020)
+[2022-11-08 20:05:11 +0800] [89019] [INFO] Worker exiting (pid: 89019)
+[2022-11-08 20:05:11 +0800] [89018] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ziqing/Invitaion_website/manage.py", line 1, in <module>
+    from backend.app import app
+  File "/home/ziqing/Invitaion_website/backend/app.py", line 12, in <module>
+    db.init_app(app)
+  File "/home/ziqing/.local/share/virtualenvs/backend-fFg-Ly0b/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 301, in init_app
+    raise RuntimeError(
+RuntimeError: Either 'SQLALCHEMY_DATABASE_URI' or 'SQLALCHEMY_BINDS' must be set.
+[2022-11-08 20:05:11 +0800] [89018] [INFO] Worker exiting (pid: 89018)
+[2022-11-08 20:05:13 +0800] [89017] [WARNING] Worker with pid 89019 was terminated due to signal 15
+[2022-11-08 20:05:13 +0800] [89017] [WARNING] Worker with pid 89020 was terminated due to signal 15
+[2022-11-08 20:05:13 +0800] [89017] [WARNING] Worker with pid 89021 was terminated due to signal 15
+[2022-11-08 20:05:13 +0800] [89017] [INFO] Shutting down: Master
+[2022-11-08 20:05:13 +0800] [89017] [INFO] Reason: Worker failed to boot.

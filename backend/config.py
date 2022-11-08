@@ -1,3 +1,8 @@
+wsgi_app="app:app"
+errorlog="error.log"
+workers=4
+bind=["0.0.0.0:80"]
+
 DIALECT = 'mysql'
 DRIVER = 'pymysql'
 USERNAME = 'root'
