@@ -16,14 +16,14 @@ db = SQLAlchemy(app)
 def homme_page():
     return render_template("index.html")
 
+class Todict:
+    def to_dict(self):
+        dict = self.__dict__
+        if "_sa_instance_state" in dict:
+            del dict["_sa_instance_state"]
+        return dict  
 
-def to_dict(self):
-    dict = self.__dict__
-    if "_sa_instance_state" in dict:
-        del dict["_sa_instance_state"]
-    return dict  
-
-class Invitation(db.Model):
+class Invitation(db.Model, Todict):
     __tablename__ = 'invitations'
     invitation_id = db.Column(db.String(20), primary_key=True, nullable=False)
     guest_name = db.Column(db.String(20), nullable=False)
@@ -33,7 +33,7 @@ class Invitation(db.Model):
     main_lawyer_name = db.Column(db.String(20), nullable=False)
     assistant_name = db.Column(db.String(20), nullable=True)
 
-class Worker(db.Model):
+class Worker(db.Model, Todict):
     __tablename__ = 'workers'
     worker_id = db.Column(db.Integer, primary_key=True, nullable=False)
     worker_name = db.Column(db.String(20), nullable=False)
@@ -49,7 +49,6 @@ def get_all_invitations():
     result = []
     for data in sqlData:
         result.append(data.to_dict())
-    print(sqlData)
     return json.dumps(result, default=str)
 
 @app.route('/MP_verify_rAfegUtbODZEgsbj.txt', methods=['GET'])
@@ -68,8 +67,7 @@ def get_invitation_in_id():
     result = []
     for data in sqlData:
         result.append(data.to_dict())
-   
-    return json.dumps(result, default=str)
+    return result[0]
 
 # add a new invitation
 @app.route('/invitation/add', methods=['POST','GET'])
