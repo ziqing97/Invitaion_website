@@ -16,12 +16,12 @@ db = SQLAlchemy(app)
 def homme_page():
     return render_template("index.html")
 
-class Todict:
-    def to_dict(self):
-        dict = self.__dict__
-        if "_sa_instance_state" in dict:
-            del dict["_sa_instance_state"]
-        return dict  
+
+def to_dict(self):
+    dict = self.__dict__
+    if "_sa_instance_state" in dict:
+        del dict["_sa_instance_state"]
+    return dict  
 
 class Invitation(db.Model):
     __tablename__ = 'invitations'
