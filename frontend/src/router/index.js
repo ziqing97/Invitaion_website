@@ -12,7 +12,7 @@ const routes = [
     }
   },
   {
-    path: '/newyearwish',
+    path: '#/newyearwish',
     name: 'NewYearRoute',
     component: () => import('../views/NewYear.vue'),
     meta: {
@@ -21,7 +21,7 @@ const routes = [
     }
   },
   {
-    path: '/moonfestivalwish',
+    path: '#/moonfestivalwish',
     name: 'MoonFestivalRoute',
     component: () => import('../views/MoonFestival.vue'),
     meta: {
@@ -30,7 +30,7 @@ const routes = [
     }
   },
   {
-    path: '/addinvitation',
+    path: '#/addinvitation',
     name: 'AddInvitationRoute',
     component: () => import('../views/AddInvitation.vue'),
     meta: {
@@ -39,7 +39,7 @@ const routes = [
     }
   },
   {
-    path: '/AllInvitation',
+    path: '#/AllInvitation',
     name: 'AllInvitationRoute',
     component: () => import('../views/AllInvitation.vue'),
     meta: {
@@ -48,7 +48,7 @@ const routes = [
     }
   },
   {
-    path: '/invitation/:invitation_name',
+    path: '#/invitation/:invitation_name',
     name: 'InvitationRoute',
     component: () => import('../views/InvitationView.vue'),
     meta: {
@@ -57,7 +57,7 @@ const routes = [
     }
   },
   {
-    path: '/acknowledge/:acknowledge_name',
+    path: '#/acknowledge/:acknowledge_name',
     name: 'AcknowledgementRoute',
     component: () => import('../views/AcknowledgementView.vue'),
     meta: {
@@ -66,7 +66,7 @@ const routes = [
     }
   },
   {
-    path: '/addsuccess/:invitation_name',
+    path: '#/addsuccess/:invitation_name',
     name: 'AddSuccess',
     component: () => import('../views/AddSuccess.vue'),
     meta: {
@@ -75,7 +75,7 @@ const routes = [
     }
   },
   {
-    path: '/:pathMatch(.*)*',
+    path: '#/:pathMatch(.*)*',
     name: 'ErrorRoute',
     component: () => import('../views/ErrorView.vue'),
     meta: {
