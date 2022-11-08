@@ -73,9 +73,11 @@ export default {
                 this.mainLawyer = res.data.main_lawyer_name
                 this.teamAssistant = res.data.assistant_name
                 this.contactNumber = res.data.contact_number
+                // eslint-disable-next-line
                 console.log(res)
                 }
             ).catch(res => {
+                // eslint-disable-next-line
                 console.log(res)
             })
         }

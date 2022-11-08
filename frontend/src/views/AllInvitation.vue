@@ -24,9 +24,11 @@
         axios.get('/invitation/all', 'category_name=' + this.$route.params.category_name).then(
         res => {
           this.AllInvitation = res.data
+          // eslint-disable-next-line
           console.log(res)
         }
         ).catch(res => {
+          // eslint-disable-next-line
           console.log(res)
         })
       }
