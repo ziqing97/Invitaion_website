@@ -3,17 +3,21 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask import request,url_for,render_template
 import json
+import requests
+from django.core.cache import cache
 
 import config
 
-app = Flask(__name__,static_folder="../frontend/dist/",static_url_path="/",template_folder="../frontend/dist/")
+wechat_sig = requests.get('https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxf28427bb825d7a37&secret=bbe889349ecdd48cd572f23c7944461c')
+
+app = Flask(__name__,static_folder="../frontend/dist/static",template_folder="../frontend/dist/")
 app.config.from_object(config)
 db = SQLAlchemy(app)
 
 
-# home page
-@app.route("/",methods=["GET"])
-def homme_page():
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def catch_all(path):
     return render_template("index.html")
 
 class Todict:
@@ -38,6 +42,12 @@ class Worker(db.Model, Todict):
     worker_id = db.Column(db.Integer, primary_key=True, nullable=False)
     worker_name = db.Column(db.String(20), nullable=False)
 
+class AppItem(db.Model, Todict):
+    __tablename__ = 'apiToken'
+    Token = db.Column(db.String(128), primary_key=True, nullable=False)
+    Appid = db.Column(db.String(128), primary_key=True, nullable=False)
+    App_secret = db.Column(db.String(128), primary_key=True, nullable=False)
+
 def initdb():
     db.create_all()
     #click.echo('Intialized database.')
@@ -54,6 +64,23 @@ def get_all_invitations():
 @app.route('/MP_verify_rAfegUtbODZEgsbj.txt', methods=['GET'])
 def return_weixin_api():
     return "rAfegUtbODZEgsbj"
+
+@app.route('/wechat/apitoken', methods=['POST','GET'])
+def return_weixin_sig():
+    appid = request.form.get("appid")
+    token = cache.get(appid)
+    print(appid)
+    if token:
+        print(token)
+        print(1)
+        return(token)
+    else:
+        secret = AppItem.sesssion.excute(AppItem.select("App_secret")).filter_by("Appid"==appid)
+        token = secret
+        cache.set(appid, token)
+        print(secret)
+        return(token)
+
     
 # return the invitation with given id
 @app.route('/invitation/get', methods=['POST'])
@@ -84,3 +111,4 @@ def add_new_invitation():
         db.session.add(invitation)
 
 #with app.app_context():
+
