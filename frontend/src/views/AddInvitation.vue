@@ -72,6 +72,9 @@ export default {
         }
     },
     methods: {
+        sentData(){
+            
+        },
         showSuccess(){
             this.$router.push({name: 'AddSuccess', params: { invitation_name: 'yuziqing'}}) // here should be a variable
         }
