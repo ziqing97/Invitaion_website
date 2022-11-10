@@ -1,19 +1,20 @@
 from sre_constants import SUCCESS
+import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask import request,url_for,render_template
 import json
 import requests
+from hashlib import sha1
 from django.core.cache import cache
 
 import config
-
-wechat_sig = requests.get('https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxf28427bb825d7a37&secret=bbe889349ecdd48cd572f23c7944461c')
 
 app = Flask(__name__,static_folder="../frontend/dist/static",template_folder="../frontend/dist/")
 app.config.from_object(config)
 db = SQLAlchemy(app)
 
+os.environ['DJANGO_SETTINGS_MODULE'] = 'setting'
 
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
@@ -46,7 +47,7 @@ class AppItem(db.Model, Todict):
     __tablename__ = 'apiToken'
     Token = db.Column(db.String(128), primary_key=True, nullable=False)
     Appid = db.Column(db.String(128), primary_key=True, nullable=False)
-    App_secret = db.Column(db.String(128), primary_key=True, nullable=False)
+    Appsecret = db.Column(db.String(128), primary_key=True, nullable=False)
 
 def initdb():
     db.create_all()
@@ -65,21 +66,49 @@ def get_all_invitations():
 def return_weixin_api():
     return "rAfegUtbODZEgsbj"
 
-@app.route('/wechat/apitoken', methods=['POST','GET'])
+@app.route('/wechat/apitoken', methods=['POST'])
 def return_weixin_sig():
-    appid = request.form.get("appid")
-    token = cache.get(appid)
-    print(appid)
+    data = request.get_json()
+    app_id = data["appid"]
+    noncestr = data["noncestr"]
+    timestamp = data["timestamp"]
+    suffix = data["domainSuffix"]
+    token = cache.get(app_id)
     if token:
-        print(token)
-        print(1)
-        return(token)
+        print('token in cache')
     else:
-        secret = AppItem.sesssion.excute(AppItem.select("App_secret")).filter_by("Appid"==appid)
-        token = secret
-        cache.set(appid, token)
-        print(secret)
-        return(token)
+        sqldata = AppItem.query.filter(AppItem.Appid==app_id)
+        result = []
+        for data in sqldata:
+            result.append(data.to_dict())
+        secret = result[0]['Appsecret']
+        wechat_r = requests.get(f'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={app_id}&secret={secret}')
+        if wechat_r.status_code == 200:
+            token_dict = wechat_r.json()
+            token = token_dict['access_token']
+            expires_in = token_dict['expires_in']
+            cache.set(app_id, token,expires_in-60)
+        else:
+            raise Exception('calling token mistake')
+        print('called new token')
+    ticket = cache.get(app_id+'ticket')
+    if ticket:
+        print("tickets in cache")
+    else:
+        wechat_t = requests.get(f'https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token={token}&type=jsapi')
+        if wechat_t.status_code == 200:
+            ticket_dict = wechat_t.json()
+            ticket = ticket_dict['ticket']
+            expires_in_ticket = ticket_dict['expires_in']
+            cache.set(app_id+'ticket', token,expires_in_ticket-60)
+        else:
+            raise Exception('calling ticket mistake')
+        print('calling new ticket')
+    url = 'http://www.junnuolc.cn'+'/'+suffix
+    jsapi_ticket = f'{ticket}&noncestr={noncestr}&timestamp={timestamp}&url={url}'
+    signature = sha1(jsapi_ticket.encode('utf-8'))
+    signature.hexdigest()
+    return signature.hexdigest()
 
     
 # return the invitation with given id
