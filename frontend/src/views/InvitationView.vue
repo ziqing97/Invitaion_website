@@ -46,7 +46,6 @@ export default {
     name: "InvitationView",
     data() {
         return {
-            data: {},
             gutstName: null,
             invitationTime: null,
             guestCount: null,
@@ -66,7 +65,6 @@ export default {
         getInviInfo() {
             axios.post('/invitation/get', 'invitation_id=' + this.$route.params.invitation_name).then(
                 res => {
-                this.data = res.data
                 this.gutstName = res.data.guest_name
                 this.invitationTime = res.data.invitation_time
                 this.guestCount = res.data.guest_count

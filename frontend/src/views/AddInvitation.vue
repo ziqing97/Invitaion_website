@@ -24,12 +24,12 @@
         <span>电话号码：</span> <br/>
         <input v-model="phoneNumber"/><br/>
     </div>
-    <div>{{ customerName }}</div>
 </div>
-<button @click="showSuccess">确定</button>
+<button @click="sentData">确定</button>
 </template>
 
 <script>
+import axios from 'axios'
 import Datepicker from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css'
 import { ref, onMounted, defineAsyncComponent, computed } from 'vue';
@@ -43,8 +43,7 @@ export default {
         // For demo purposes assign range from the current date
         onMounted(() => {
             const startDate = new Date();
-            const endDate = new Date(new Date().setDate(startDate.getDate() + 7));
-            date.value = [startDate, endDate];
+            date.value = startDate;
         })
         return {
             date,
@@ -57,26 +56,40 @@ export default {
             customerCount: null,
             mainLawyer: null,
             teamAssistant: null,
-            phoneNumber: null
+            phoneNumber: null,
+            datetime: null
         }
     },
-    computed:{
+    methods: {
+        sentData(){
+            var key = this.generatedKey()
+            var data = {'invitation_id':key,'guest_name':this.customerName,
+            'guest_count':this.customerCount,'main_lawyer_name':this.mainLawyer,
+            'assistant_name':this.teamAssistant,'contact_number':this.phoneNumber,'invitation_time':this.date}
+            axios.post('/invitation/add', data).then(
+            res => {
+            this.apiToken = res
+            // eslint-disable-next-line
+            console.log(res)
+            }
+            ).catch(res => {
+            // eslint-disable-next-line
+            console.log(res)
+            })
+            this.showSuccess(key)
+        },
+        showSuccess(key){
+            this.$router.push({name: 'AddSuccess', params: { invitation_name: key}}) 
+        },
         generatedKey(){
-            var str = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+            var str = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','G',
+            'H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
             var res = "";
             for(var i = 0; i < 20 ; i ++) {
                 var id = Math.ceil(Math.random()*35);
                 res += str[id];
             }
             return res;
-        }
-    },
-    methods: {
-        sentData(){
-            
-        },
-        showSuccess(){
-            this.$router.push({name: 'AddSuccess', params: { invitation_name: 'yuziqing'}}) // here should be a variable
         }
     }
 }

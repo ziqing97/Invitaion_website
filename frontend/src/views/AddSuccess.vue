@@ -4,29 +4,37 @@
     添加成功！
     </div>
     <div>
-        <router-link :to="{ name: 'InvitationRoute', params: { invitation_name: getInvitation() }}">邀请链接</router-link>
+        <a @click="toData">邀请链接</a>
     </div>
 </div>
 
 </template>
 
 <script>
+import { NavigationFailureType, isNavigationFailure } from 'vue-router'
 export default{
     name: 'AddSuccess',
     methods:{
-        getInvitation(){
+        toData(){
             var key = this.$route.params.invitation_name;
-            return key;
+            this.$router.push(`/invitation/${key}`).catch(failure => {
+                if (isNavigationFailure(failure, NavigationFailureType.redirected)) {
+                    failure.to.path // '/admin'
+                    failure.from.path // '/
+                }
+            })
         }
-    },
-    mounted() {
-        this.getInvitation();
-    },
+    }
 }
 </script>
 
 <style scoped>
 #addmain{
     text-align: left;
+}
+
+#link{
+    text-decoration: underline;
+    color: blue
 }
 </style>

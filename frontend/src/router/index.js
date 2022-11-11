@@ -71,7 +71,7 @@ const routes = [
     component: () => import('../views/AddSuccess.vue'),
     meta: {
       auth: true,
-      title: '所有邀请'
+      title: '成功'
     }
   },
   {

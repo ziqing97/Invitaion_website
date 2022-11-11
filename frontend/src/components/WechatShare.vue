@@ -1,7 +1,6 @@
 <template>
     <div>{{ apiToken }}</div>
     <div>{{ apiId }}</div>
-    <div>{{ domainSuffix }}</div>
 </template>
 
 <script>
@@ -33,7 +32,7 @@ export default {
         var data = {'appid':this.apiId, 'noncestr': this.genNoncestr(), 'timestamp': this.genTimestamp(), 'domainSuffix': this.domainSuffix}
         axios.post('/wechat/apitoken', data).then(
         res => {
-          this.appToken = res
+          this.apiToken = res
           // eslint-disable-next-line
           console.log(res)
         }

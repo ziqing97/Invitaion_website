@@ -1,10 +1,11 @@
 <template>
-  <wechat-share domainSuffix='AllInvitation'></wechat-share>
   <div>
-    <li id="all_inv_list" v-for="item in AllInvitation" v-bind:key="item">
+    <wechat-share domainSuffix='AllInvitation'></wechat-share>
+  </div>
+  <div>
+    <li id="all_inv_list" v-for="item in Invitation" v-bind:key="item">
       <router-link :to="{ name: 'InvitationRoute', params: { invitation_name: item.invitation_id }}">{{ item.invitation_time }}: {{item.guest_name }}</router-link><br/>
     </li>
-    
   </div>
   </template>
   
@@ -24,7 +25,7 @@
     },
     methods:{
       getAllInvi () {
-        axios.get('/invitation/all', 'category_name=' + this.$route.params.category_name).then(
+        axios.get('/invitation/all').then(
         res => {
           this.Invitation = res.data
           // eslint-disable-next-line
