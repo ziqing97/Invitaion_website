@@ -1,5 +1,8 @@
 <template>
-  <div>
+    <div>
+    <wechat-share domainSuffix='AllInvitation'></wechat-share>
+    </div>
+    <div>
     <div id="video_intro">
         <video id="video" autobuffer controls webkit-playsinline playsinline x5-playsinline>
             <source src="../assets/welcome.mp4#t=0.8" type="video/mp4">
@@ -41,6 +44,7 @@
 
 <script>
 import MapContainer from '@/components/MapContainer.vue'
+import WechatShare from  '@/components/WechatShare.vue'
 import axios from 'axios'
 export default {
     name: "InvitationView",
@@ -80,7 +84,7 @@ export default {
             })
         }
     },
-    components: { MapContainer }
+    components: { MapContainer, WechatShare}
 }
 </script>
 
