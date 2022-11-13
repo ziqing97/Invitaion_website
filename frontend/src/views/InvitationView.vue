@@ -1,14 +1,12 @@
 <template>
     <div>
-    <!--<wechat-share domainSuffix='AllInvitation'></wechat-share>-->
+    <wechat-share domainSuffix='AllInvitation'></wechat-share>
     </div>
     <div>
     <div id="video_intro">
-        <!--<video id="video" autobuffer controls webkit-playsinline playsinline x5-playsinline>
+        <video id="video" autobuffer controls webkit-playsinline playsinline x5-playsinline>
             <source src="../assets/welcome.mp4#t=0.8" type="video/mp4">
-        </video>-->
-        <videoPlay
-        v-bind="options"/>
+        </video>
     </div>
     <div id="message">
         尊贵的当事人：您好！<br/>
@@ -46,11 +44,8 @@
 
 <script>
 import MapContainer from '@/components/MapContainer.vue'
-//import WechatShare from  '@/components/WechatShare.vue'
-import "vue3-video-play/dist/style.css"
-import videoPlay from "vue3-video-play"
+import WechatShare from  '@/components/WechatShare.vue'
 import axios from 'axios'
-import { reactive } from "vue";
 export default {
     name: "InvitationView",
     data() {
@@ -60,32 +55,7 @@ export default {
             guestCount: null,
             mainLawyer: null,
             teamAssistant: null,
-            contactNumber: null,
-            options:  reactive({
-                    width: "100%", //播放器高度
-                    color: "#000000", //主题色
-                    title: "", //视频名称
-                    src: "../assets/welcome.mp4", //视频源
-                    muted: false, //静音
-                    webFullScreen: false,
-                    speedRate: ["0.75", "1.0", "1.25", "1.5", "2.0"], //播放倍速
-                    autoPlay: false, //自动播放
-                    loop: false, //循环播放
-                    mirror: false, //镜像画面
-                    currentTime: 1,
-                    ligthOff: false, //关灯模式
-                    volume: 0.3, //默认音量大小
-                    control: true, //是否显示控制
-                    controlBtns: [
-                        "audioTrack",
-                        "quality",
-                        "speedRate",
-                        "volume",
-                        "setting",
-                        "pip",
-                        "pageFullScreen",
-                        "fullScreen",]
-            })
+            contactNumber: null
         };
     },
     mounted() {
@@ -114,7 +84,7 @@ export default {
             })
         }
     },
-    components: { MapContainer, videoPlay }
+    components: { MapContainer, WechatShare}
 }
 </script>
 
