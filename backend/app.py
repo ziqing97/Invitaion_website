@@ -128,16 +128,22 @@ def get_invitation_in_id():
 # add a new invitation
 @app.route('/invitation/add', methods=['POST','GET'])
 def add_new_invitation():
-    if not request.form['invitation_id'] or not request.form['guest_name'] or not request.form['invitation_time'] \
-        or not request.form['guest_count'] or not request.form['contact_number'] or not request.form['main_lawyer_name'] \
-        or not request.form['assistant_name']:
-        flash('有内容为空！')
+    data = request.get_json()
+    if not data['invitation_id'] or not data['guest_name'] or not data['invitation_time'] \
+        or not data['guest_count'] or not data['contact_number'] or not data['main_lawyer_name'] \
+        or not data['assistant_name']:
+        print("There is somethign empty, which is not allowed")
+        return '-1'
     else:
-        invitation = Invitation(request.form['invitation_id'],request.form['guest_name'],request.form['invitation_time'],\
-        request.form['guest_count'],request.form['contact_number'],request.form['main_lawyer_name'],\
-        request.form['assistant_name'])
+        date = data['invitation_time'][0:10]
+        print(date)
+        new_invitation = Invitation(invitation_id=data['invitation_id'],guest_name=data['guest_name'],\
+        invitation_time=date,guest_count=data['guest_count'],contact_number=data['contact_number'],\
+        main_lawyer_name=data['main_lawyer_name'],assistant_name=data['assistant_name'])
+        db.session.add(new_invitation)
+        db.session.commit()
+        db.session.close()
+        return '200'
 
-        db.session.add(invitation)
-
-#with app.app_context():
-
+if __name__ == "__main__":
+    app.run(host="0.0.0.0",port="80",debug=True)
