@@ -1,3 +1,8 @@
 node_modules/*
 backend/__pycache__/*
 frontend/vue.config.js
+frontend/package-lock.json
+frontend/package.json
+frontend/vue.config.js
+frontend/package.json
+frontend/package-lock.json
