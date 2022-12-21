@@ -4,9 +4,9 @@
     </div>
     <div>
     <div id="video_intro">
-        <!--<video id="video" autobuffer controls webkit-playsinline playsinline x5-playsinline>
+        <video id="video" autobuffer controls webkit-playsinline playsinline x5-playsinline>
             <source src="../assets/welcome.mp4#t=0.8" type="video/mp4">
-        </video>-->
+        </video>
         <videoPlay
         v-bind="options"/>
     </div>
@@ -15,7 +15,7 @@
         诚邀出席 【北京市盈科（深圳）律师事务所-咨询会议】<br/>
         预订贵宾：余紫清 <br/>
         预订时间：2023-01-03 星期二 <br/>
-        预订人数：4} <br/>
+        预订人数：4 <br/>
         主办律师：龙成 <br/>
         团队助理：何律师 <br/>
         联系电话：<span id='number' v-touch="callPhone">13873246454 </span><br/>
@@ -49,7 +49,7 @@ import MapContainer from '@/components/MapContainer.vue'
 //import WechatShare from  '@/components/WechatShare.vue'
 import "vue3-video-play/dist/style.css"
 import videoPlay from "vue3-video-play"
-import axios from 'axios'
+// import axios from 'axios'
 import { reactive } from "vue";
 export default {
     name: "InvitationView",
@@ -96,7 +96,7 @@ export default {
             window.location.href = 'tel://' + this.contactNumber;
         },
         
-        getInviInfo() {
+        /* getInviInfo() {
             axios.post('/invitation/get', 'invitation_id=' + this.$route.params.invitation_name).then(
                 res => {
                 this.gutstName = res.data.guest_name
@@ -112,7 +112,7 @@ export default {
                 // eslint-disable-next-line
                 console.log(res)
             })
-        }
+        } */
     },
     components: { MapContainer, videoPlay }
 }
