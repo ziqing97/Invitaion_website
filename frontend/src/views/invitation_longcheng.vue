@@ -4,11 +4,10 @@
     </div>
     <div>
     <div id="video_intro">
-        <video id="video" autobuffer controls webkit-playsinline playsinline x5-playsinline>
+        <!--<video id="video" autobuffer controls webkit-playsinline playsinline x5-playsinline>
             <source src="../assets/welcome.mp4#t=0.8" type="video/mp4">
-        </video>
-        <videoPlay
-        v-bind="options"/>
+        </video>-->
+        <videoPlay v-bind="options"/>
     </div>
     <div id="message">
         尊贵的当事人：您好！<br/>
