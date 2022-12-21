@@ -62,9 +62,9 @@ def get_all_invitations():
         result.append(data.to_dict())
     return json.dumps(result, default=str)
 
-@app.route('/MP_verify_rAfegUtbODZEgsbj.txt', methods=['GET'])
+@app.route('/MP_verify_ziT6pOvsViIMgLQlj.txt', methods=['GET'])
 def return_weixin_api():
-    return "rAfegUtbODZEgsbj"
+    return "ziT6pOvsViIMgLQl"
 
 @app.route('/wechat/apitoken', methods=['POST'])
 def return_weixin_sig():
