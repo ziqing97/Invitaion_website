@@ -70,7 +70,7 @@ export default {
                             src: require("../assets/aa.mp4")
                         }
                     ],*/
-                    src: "../assets/aa.mp4",
+                    src: "../static/aa.mp4",
                     muted: false, //静音
                     webFullScreen: false,
                     speedRate: ["0.75", "1.0", "1.25", "1.5", "2.0"], //播放倍速
