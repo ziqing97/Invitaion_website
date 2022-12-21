@@ -4,7 +4,7 @@
     </div>
     <div>
     <div id="video_intro">
-        <vue3-video-player src="./assets/aa.mp4"></vue3-video-player>
+        <vue3-video-player src="../assets/aa.mp4"></vue3-video-player>
         <!--<video id="video" autobuffer controls webkit-playsinline playsinline x5-playsinline>
             <source src="../assets/welcome.mp4#t=0.8" type="video/mp4">
         </video>
