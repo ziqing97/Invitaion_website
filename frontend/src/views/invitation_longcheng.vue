@@ -5,7 +5,7 @@
     <div>
     <div id="video_intro">
         <video id="video" autobuffer controls webkit-playsinline playsinline x5-playsinline>
-            <source src='@/assets/aa.mp4' type="video/mp4">
+            <source src='https://www.bilibili.com/video/av776569997?t=4.6' type="video/mp4">
         </video>
         <!--<vue3VideoPlay v-bind="options"/>-->
     </div>
