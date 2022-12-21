@@ -5,7 +5,7 @@
     <div>
     <div id="video_intro">
         <video id="video" autobuffer controls webkit-playsinline playsinline x5-playsinline>
-            <source src='@/assets/welcome.mp4' type="video/mp4">
+            <source src='@/assets/aa.mp4' type="video/mp4">
         </video>
         <!--<vue3VideoPlay v-bind="options"/>-->
     </div>
