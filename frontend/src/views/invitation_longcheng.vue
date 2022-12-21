@@ -4,10 +4,10 @@
     </div>
     <div>
     <div id="video_intro">
-        <!--<video id="video" autobuffer controls webkit-playsinline playsinline x5-playsinline>
+        <video id="video" autobuffer controls webkit-playsinline playsinline x5-playsinline>
             <source src="../assets/welcome.mp4#t=0.8" type="video/mp4">
-        </video>-->
-        <vue3VideoPlay v-bind="options"/>
+        </video>
+        <!--<vue3VideoPlay v-bind="options"/>-->
     </div>
     <div id="message">
         尊贵的当事人：您好！<br/>
@@ -46,8 +46,8 @@
 <script>
 import MapContainer from '@/components/MapContainer.vue'
 //import WechatShare from  '@/components/WechatShare.vue'
-import "vue3-video-play/dist/style.css"
-import vue3VideoPlay from "vue3-video-play"
+//import "vue3-video-play/dist/style.css"
+//import vue3VideoPlay from "vue3-video-play"
 // import axios from 'axios'
 import { reactive } from "vue";
 export default {
@@ -119,7 +119,7 @@ export default {
             })
         } */
     },
-    components: { MapContainer, vue3VideoPlay }
+    components: { MapContainer }
 }
 </script>
 
