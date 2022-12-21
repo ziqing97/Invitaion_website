@@ -4,10 +4,11 @@
     </div>
     <div>
     <div id="video_intro">
+        <vue3-video-player @play="your_method" src="../assets/aa.mp4"></vue3-video-player>
         <!--<video id="video" autobuffer controls webkit-playsinline playsinline x5-playsinline>
             <source src="../assets/welcome.mp4#t=0.8" type="video/mp4">
-        </video>-->
-        <videoPlay v-bind="options"/>
+        </video>
+        <videoPlay v-bind="options"/>-->
     </div>
     <div id="message">
         尊贵的当事人：您好！<br/>
@@ -46,10 +47,11 @@
 <script>
 import MapContainer from '@/components/MapContainer.vue'
 //import WechatShare from  '@/components/WechatShare.vue'
-import "vue3-video-play/dist/style.css"
-import videoPlay from "vue3-video-play"
+import Vue3VideoPlayer from '@cloudgeek/vue3-video-player'
+import '@cloudgeek/vue3-video-player/dist/vue3-video-player.css'
+// import videoPlay from "vue3-video-play"
 // import axios from 'axios'
-import { reactive } from "vue";
+// import { reactive } from "vue";
 export default {
     name: "InvitationView",
     data() {
@@ -60,7 +62,7 @@ export default {
             mainLawyer: null,
             teamAssistant: null,
             contactNumber: null,
-            options:  reactive({
+            /* options:  reactive({
                     width: "100%", //播放器高度
                     color: "#000000", //主题色
                     title: "", //视频名称
@@ -70,6 +72,7 @@ export default {
                             src: require("../assets/aa.mp4")
                         }
                     ],
+                    src: require("../assets/aa.mp4"),
                     muted: false, //静音
                     webFullScreen: false,
                     speedRate: ["0.75", "1.0", "1.25", "1.5", "2.0"], //播放倍速
@@ -89,7 +92,7 @@ export default {
                         "pip",
                         "pageFullScreen",
                         "fullScreen",]
-            })
+            }) */
         };
     },
     mounted() {
@@ -118,7 +121,7 @@ export default {
             })
         } */
     },
-    components: { MapContainer, videoPlay }
+    components: { MapContainer, Vue3VideoPlayer }
 }
 </script>
 
