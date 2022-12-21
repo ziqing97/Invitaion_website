@@ -67,7 +67,7 @@ export default {
                     sources: [
                         {
                             type: "video/mp4",
-                            src: require("../assets/welcome.mp4")
+                            src: require("../assets/aa.mp4")
                         }
                     ],
                     muted: false, //静音
