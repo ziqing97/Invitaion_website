@@ -64,7 +64,12 @@ export default {
                     width: "100%", //播放器高度
                     color: "#000000", //主题色
                     title: "", //视频名称
-                    src: "../assets/welcome.mp4", //视频源
+                    sources: [
+                        {
+                            type: "video/mp4",
+                            src: require("../assets/welcome.mp4")
+                        }
+                    ],
                     muted: false, //静音
                     webFullScreen: false,
                     speedRate: ["0.75", "1.0", "1.25", "1.5", "2.0"], //播放倍速
