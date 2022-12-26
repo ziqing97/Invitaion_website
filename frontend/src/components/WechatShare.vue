@@ -1,16 +1,21 @@
 <template>
-    <button v-on:click="useWxShare">分享</button>
-    <div>{{ apiId }}</div>
+  <div>
+    <div>{{timestamp}}</div>
+    <div>{{noncestr}}</div>
+    <div>{{apiToken}}</div>
+    <div>{{signature}}</div>
+  </div>
 </template>
 
 <script>
 import axios from 'axios'
 import wx from "weixin-js-sdk";
+//import { shares } from '@/api/index'
 export default {
     name: 'WechatShare',
     data(){
       return{
-        apiId: "wxf28427bb825d7a37",
+        apiId: "wxbc77294cc827500b",
         noncestr: "",
         timestamp: null,
         apiToken: null,
@@ -23,7 +28,7 @@ export default {
     },
 
     mounted () {
-      this.getToken()
+      this.getShareInfo()
     },
 
     computed:{
@@ -48,7 +53,7 @@ export default {
         })
       },
 
-      initConfig(){
+      /*initConfig(){
         return new Promise((resolve) => {
         wx.config({
           debug: false,
@@ -93,12 +98,44 @@ export default {
 
       useWxShare() {
         var link = 'http://www.junnuolc.cn'+'/'+this.domainSuffix
-        link = 'http://www.junnuolc.cn'+'/'+'AllInvitation'
+        link = 'http://www.junnuolc.cn'+'/'+'invitation_longcheng'
         var imgUrl = ''
         var shareConfig = {'title':"邀请函",'desc':'给您的邀请函','link':link,'imgUrl':imgUrl}
         this.initConfig().then(() => {
           this.setShareInfo(shareConfig);
         });
+      },*/
+      getShareInfo() {
+        this.getToken();
+        /*this.save = {
+            url: location.href.split('#')[0] // 只需要传当前页面地址
+          };*/
+        //shares(this.save).then(res => {
+        wx.config({
+          debug: true,
+          appId: this.appId,  // appID 公众号的唯一标识
+          timestamp: this.timestamp, // 生成签名的时间戳
+          nonceStr: this.nonceStr, //  生成签名的随机串
+          signature: this.signature, // 生成的签名
+          jsApiList: [
+            'updateAppMessageShareData', // 分享到朋友
+            'updateTimelineShareData', // 分享到朋友圈
+          ]
+        });
+
+        wx.ready(() => {
+          var shareData = {
+            title: '邀请函',
+            desc: '给您的邀请函',
+            link: 'http://www.junnuolc.cn/invitation_longcheng', // 分享后的地址
+            imgUrl:
+              ''
+          };
+          //点击要去分享
+          wx.updateAppMessageShareData(shareData);
+          wx.updateTimelineShareData(shareData);
+        });
+        //});
       },
 
       genTimestamp () {

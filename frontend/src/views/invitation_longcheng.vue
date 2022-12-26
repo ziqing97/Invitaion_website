@@ -1,14 +1,11 @@
 <template>
     <div>
-    <!--<wechat-share domainSuffix='AllInvitation'></wechat-share>-->
-    </div>
-    <div>
+    <wechat-share domainSuffix='invitation_longcheng'></wechat-share>
     <div id="video_intro">
         <!--<video id="video" autobuffer controls webkit-playsinline playsinline x5-playsinline>
             <source src='https://www.bilibili.com/video/av776569997?t=4.6' type="video/mp4">
         </video>-->
         <iframe width=100% src="//player.bilibili.com/player.html?bvid=BV1AP4y1z7bN&page=1" scrolling="no" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-        <!--<vue3VideoPlay v-bind="options"/>-->
     </div>
     <div id="message">
         尊贵的当事人：您好！<br/>
@@ -46,7 +43,7 @@
 
 <script>
 import MapContainer from '@/components/MapContainer.vue'
-//import WechatShare from  '@/components/WechatShare.vue'
+import WechatShare from  '@/components/WechatShare.vue'
 //import "vue3-video-play/dist/style.css"
 //import vue3VideoPlay from "vue3-video-play"
 // import axios from 'axios'
@@ -120,7 +117,7 @@ export default {
             })
         } */
     },
-    components: { MapContainer }
+    components: { MapContainer, WechatShare }
 }
 </script>
 

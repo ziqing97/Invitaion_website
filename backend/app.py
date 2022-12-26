@@ -79,9 +79,10 @@ def return_weixin_sig():
     else:
         sqldata = AppItem.query.filter(AppItem.Appid==app_id)
         result = []
-        for data in sqldata:
-            result.append(data.to_dict())
-        secret = result[0]['Appsecret']
+        '''for data in sqldata:
+            result.append(data.to_dict())'''
+        # secret = result[0]['Appsecret']
+        secret = '1b190b69588f2350dbe377a14d044eb3'
         wechat_r = requests.get(f'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={app_id}&secret={secret}')
         if wechat_r.status_code == 200:
             token_dict = wechat_r.json()
