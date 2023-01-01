@@ -5,6 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask import request,url_for,render_template
 import json
 import requests
+import urllib.parse
 from hashlib import sha1
 from django.core.cache import cache
 
@@ -70,14 +71,15 @@ def return_weixin_api():
 def return_weixin_sig():
     data = request.get_json()
     app_id = data["appid"]
-    noncestr = data["noncestr"]
-    timestamp = data["timestamp"]
-    suffix = data["domainSuffix"]
+    noncestr = data["nonceStr"]
+    timestamp = str(data["timestamp"])
+    url = urllib.parse.unquote(data["url"])
+    url = data["url"]
     token = cache.get(app_id)
     if token:
         print('token in cache')
     else:
-        sqldata = AppItem.query.filter(AppItem.Appid==app_id)
+        #sqldata = AppItem.query.filter(AppItem.Appid==app_id)
         result = []
         '''for data in sqldata:
             result.append(data.to_dict())'''
@@ -93,6 +95,7 @@ def return_weixin_sig():
             raise Exception('calling token mistake')
         print('called new token')
     ticket = cache.get(app_id+'ticket')
+    #ticket = []
     if ticket:
         print("tickets in cache")
     else:
@@ -101,14 +104,19 @@ def return_weixin_sig():
             ticket_dict = wechat_t.json()
             ticket = ticket_dict['ticket']
             expires_in_ticket = ticket_dict['expires_in']
-            cache.set(app_id+'ticket', token,expires_in_ticket-60)
+            cache.set(app_id+'ticket', ticket,expires_in_ticket-60)
         else:
             raise Exception('calling ticket mistake')
         print('calling new ticket')
-    url = 'http://www.junnuolc.cn'+'/'+suffix
-    jsapi_ticket = f'{ticket}&noncestr={noncestr}&timestamp={timestamp}&url={url}'
+    jsapi_ticket = f'jsapi_ticket={ticket}&noncestr={noncestr}&timestamp={timestamp}&url={url}'
     signature = sha1(jsapi_ticket.encode('utf-8'))
-    signature.hexdigest()
+    print(f'ticket:{ticket}')
+    print(f'api:{app_id}')
+    print(f'noncestr:{noncestr}')
+    print(f'timestamp:{timestamp}')
+    print(f'signature:{signature.hexdigest()}')
+    print(f'url:{url}')
+    
     return signature.hexdigest()
 
     

@@ -5,7 +5,7 @@
         <!--<video id="video" autobuffer controls webkit-playsinline playsinline x5-playsinline>
             <source src='https://www.bilibili.com/video/av776569997?t=4.6' type="video/mp4">
         </video>-->
-        <iframe width=100% src="//player.bilibili.com/player.html?bvid=BV1AP4y1z7bN&page=1" scrolling="no" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+        <iframe src="//player.bilibili.com/player.html?bvid=BV1AP4y1z7bN&page=1" scrolling="no" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
     </div>
     <div id="message">
         尊贵的当事人：您好！<br/>
@@ -133,9 +133,6 @@ export default {
 
 #video_intro{
     background-color: black;
-}
-
-#video{
     width: 100%;
 }
 

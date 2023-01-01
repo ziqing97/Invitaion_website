@@ -1,4 +1,5 @@
 <template>
+<div>
   <div id="wrap" v-touch="toAmap">
     <tr>
       <td><img src="../assets/pin.png" id="locate_icon" alt="Fender Rhodes" align="center"></td>
@@ -6,8 +7,8 @@
     </tr>
   </div>
   <div id="container" v-touch="toAmap">
-    {{ initMap }}
   </div>
+</div>
 </template>
 
 <script>
