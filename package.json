@@ -1,4 +1,5 @@
 {
+  "name" : "邀请函",
   "dependencies": {
     "@vue/cli": "^5.0.8"
   }
