@@ -6,3 +6,4 @@ frontend/package.json
 frontend/vue.config.js
 frontend/package.json
 frontend/package-lock.json
+backend/nohup.out
