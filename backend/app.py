@@ -1,5 +1,8 @@
 from sre_constants import SUCCESS
 import os
+import random
+import string
+import time
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask import request,url_for,render_template
@@ -70,17 +73,15 @@ def return_weixin_api():
 @app.route('/wechat/apitoken', methods=['POST'])
 def return_weixin_sig():
     data = request.get_json()
-    app_id = data["appid"]
-    noncestr = data["nonceStr"]
-    timestamp = str(data["timestamp"])
+    app_id = 'wxbc77294cc827500b'
+    noncestr = ''.join(random.sample(string.ascii_letters + string.digits, 8))
+    timestamp = round(time.time())
     url = urllib.parse.unquote(data["url"])
-    url = data["url"]
     token = cache.get(app_id)
     if token:
         print('token in cache')
     else:
         #sqldata = AppItem.query.filter(AppItem.Appid==app_id)
-        result = []
         '''for data in sqldata:
             result.append(data.to_dict())'''
         # secret = result[0]['Appsecret']
@@ -110,14 +111,16 @@ def return_weixin_sig():
         print('calling new ticket')
     jsapi_ticket = f'jsapi_ticket={ticket}&noncestr={noncestr}&timestamp={timestamp}&url={url}'
     signature = sha1(jsapi_ticket.encode('utf-8'))
-    print(f'ticket:{ticket}')
-    print(f'api:{app_id}')
+    '''print(f'ticket:{ticket}')
+    print(f'appid:{app_id}')
     print(f'noncestr:{noncestr}')
     print(f'timestamp:{timestamp}')
     print(f'signature:{signature.hexdigest()}')
-    print(f'url:{url}')
+    print(f'url:{url}')'''
+
+    re_data = {'appId':app_id,'noncestr':noncestr,'timestamp':timestamp,'signature':signature.hexdigest()}
     
-    return signature.hexdigest()
+    return re_data
 
     
 # return the invitation with given id

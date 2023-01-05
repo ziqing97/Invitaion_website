@@ -66,15 +66,6 @@ const routes = [
     }
   },
   {
-    path: '/test',
-    name: 'test',
-    component: () => import('../components/WechatView.vue'),
-    meta: {
-      auth: true,
-      title: '邀请函'
-    }
-  },
-  {
     path: '/acknowledge/:acknowledge_name',
     name: 'AcknowledgementRoute',
     component: () => import('../views/AcknowledgementView.vue'),

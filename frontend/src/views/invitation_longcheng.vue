@@ -1,6 +1,6 @@
 <template>
     <div>
-    <wechat-share domainSuffix='invitation_longcheng'></wechat-share>
+    <wechat-share></wechat-share>
     <div id="video_intro">
         <!--<video id="video" autobuffer controls webkit-playsinline playsinline x5-playsinline>
             <source src='https://www.bilibili.com/video/av776569997?t=4.6' type="video/mp4">
@@ -91,9 +91,9 @@ export default {
             })
         };
     },
-    mounted() {
-        this.getInviInfo();
-    },
+    /*mounted() {
+        //this.getInviInfo();
+    },*/
     methods: {
         callPhone () {
             window.location.href = 'tel://' + this.contactNumber;
