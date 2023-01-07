@@ -40,6 +40,7 @@ class Invitation(db.Model, Todict):
     contact_number = db.Column(db.String(20), nullable=False)
     main_lawyer_name = db.Column(db.String(20), nullable=False)
     assistant_name = db.Column(db.String(20), nullable=True)
+    invitation_hour = db.Column(db.Integer, nullable=False)
 
 class Worker(db.Model, Todict):
     __tablename__ = 'workers'
@@ -98,7 +99,7 @@ def get_chunk(filename, byte1=None, byte2=None):
 @app.route('/download/<filepath>', methods=['GET','POST'])
 def return_sharepicture(filepath):
     fullfilename = '/usr/static/'+filepath
-    filename=filepath.split('/')[-1] #切割出文件名称
+    filename=filepath.split('/')[-1] # 切割出文件名称
     filedir=fullfilename.replace(filename,'')
 
     def send_file(fullfilename):
@@ -174,14 +175,15 @@ def add_new_invitation():
     if not data['invitation_id'] or not data['guest_name'] or not data['invitation_time'] \
         or not data['guest_count'] or not data['contact_number'] or not data['main_lawyer_name'] \
         or not data['assistant_name']:
-        print("There is somethign empty, which is not allowed")
+        print("There is something empty, which is not allowed")
         return '-1'
     else:
         date = data['invitation_time'][0:10]
-        print(date)
+        hour = data['invitation_time'][11:13]
+        print(data['invitation_time'])
         new_invitation = Invitation(invitation_id=data['invitation_id'],guest_name=data['guest_name'],\
         invitation_time=date,guest_count=data['guest_count'],contact_number=data['contact_number'],\
-        main_lawyer_name=data['main_lawyer_name'],assistant_name=data['assistant_name'])
+        main_lawyer_name=data['main_lawyer_name'],assistant_name=data['assistant_name'],invitation_hour=hour)
         db.session.add(new_invitation)
         db.session.commit()
         db.session.close()
