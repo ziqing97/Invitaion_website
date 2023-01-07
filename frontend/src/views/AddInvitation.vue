@@ -24,6 +24,7 @@
         <span>电话号码：</span> <br/>
         <input v-model="phoneNumber"/><br/>
     </div>
+    <div>{{date}}</div>
 </div>
 <button @click="sentData">确定</button>
 </template>
@@ -56,8 +57,7 @@ export default {
             customerCount: null,
             mainLawyer: null,
             teamAssistant: null,
-            phoneNumber: null,
-            datetime: null
+            phoneNumber: null
         }
     },
     methods: {

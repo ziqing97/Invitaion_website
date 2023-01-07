@@ -11,12 +11,12 @@
         尊贵的当事人：您好！<br/>
         诚邀出席 【北京市盈科（深圳）律师事务所-咨询会议】<br/>
         预订贵宾：{{gutstName}} <br/>
-        预订时间：{{invitationTime}} <br/>
+        预订时间：{{invitationTime}} {{invitationHour}}:00 {{getWeekDay}} <br/>
         预订人数：{{guestCount}} <br/>
         主办律师：{{mainLawyer}} <br/>
         团队助理：{{teamAssistant}} <br/>
         联系电话：<span id='number' v-touch="callPhone"> {{contactNumber}} </span><br/>
-        祝您往返途中平安，心情舒畅！
+        请您携带会议/案件相关全部书面材料。祝您往返途中平安，心情舒畅！
     </div>
     <br/>
     <Suspense>
@@ -51,6 +51,7 @@ export default {
         return {
             gutstName: null,
             invitationTime: null,
+            invitationHour: null,
             guestCount: null,
             mainLawyer: null,
             teamAssistant: null,
@@ -60,6 +61,15 @@ export default {
     mounted() {
         this.getInviInfo();
     },
+
+    computed:{
+        getWeekDay () {
+            var weekArray = new Array("星期日","星期一", "星期二", "星期三", "星期四", "星期五", "星期六")
+            var week  = weekArray[new Date(this.invitationTime).getDay()]
+            return week
+        },
+    },
+    
     methods: {
         callPhone () {
             window.location.href = 'tel://' + this.contactNumber;
@@ -70,6 +80,7 @@ export default {
                 res => {
                 this.gutstName = res.data.guest_name
                 this.invitationTime = res.data.invitation_time
+                this.invitationHour = res.data.invitation_hour
                 this.guestCount = res.data.guest_count
                 this.mainLawyer = res.data.main_lawyer_name
                 this.teamAssistant = res.data.assistant_name
@@ -95,6 +106,8 @@ export default {
 
 #number{
     color: rgb(19,125,196);
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 #video_intro{
