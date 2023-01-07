@@ -24,7 +24,6 @@
         <span>电话号码：</span> <br/>
         <input v-model="phoneNumber"/><br/>
     </div>
-    <div>{{date}}</div>
 </div>
 <button @click="sentData">确定</button>
 </template>
