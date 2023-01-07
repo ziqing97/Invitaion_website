@@ -3,9 +3,8 @@ import os
 import random
 import string
 import time
-from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from flask import request,url_for,render_template
+from flask import request,url_for,render_template,Response,Flask
 import json
 import requests
 import urllib.parse
@@ -55,7 +54,7 @@ class AppItem(db.Model, Todict):
 
 def initdb():
     db.create_all()
-    #click.echo('Intialized database.')
+    #　click.echo('Intialized database.')
 
 # return all invitations order by time
 @app.route('/invitation/all', methods=['GET'])
@@ -66,10 +65,54 @@ def get_all_invitations():
         result.append(data.to_dict())
     return json.dumps(result, default=str)
 
+# validation for wechat
 @app.route('/MP_verify_ziT6pOvsViIMgLQlj.txt', methods=['GET'])
 def return_weixin_api():
     return "ziT6pOvsViIMgLQl"
 
+def get_chunk(filename, byte1=None, byte2=None):
+    filesize = os.path.getsize(filename)
+    yielded = 0
+    yield_size = 1024 * 1024
+
+    if byte1 is not None:
+        if not byte2:
+            byte2 = filesize
+        yielded = byte1
+        filesize = byte2
+
+    with open(filename, 'rb') as f:
+        content = f.read()
+
+    while True:
+        remaining = filesize - yielded
+        if yielded == filesize:
+            break
+        if remaining >= yield_size:
+            yield content[yielded:yielded+yield_size]
+            yielded += yield_size
+        else:
+            yield content[yielded:yielded+remaining]
+            yielded += remaining
+
+@app.route('/download/<filepath>', methods=['GET','POST'])
+def return_sharepicture(filepath):
+    fullfilename = '/usr/static/'+filepath
+    filename=filepath.split('/')[-1] #切割出文件名称
+    filedir=fullfilename.replace(filename,'')
+
+    def send_file(fullfilename):
+        with open(fullfilename, 'rb') as targetfile:
+            while True:
+                data = targetfile.read(1 * 1024 * 1024)   # 每次读取1MB (可用限速)
+                if not data:
+                    break
+                yield data
+    response = Response(send_file(fullfilename=fullfilename), content_type='application/octet-stream')
+    response.headers["Content-disposition"] = f'attachment; filename={filename}'
+    return response
+
+# generating jssdk validation token and ticket
 @app.route('/wechat/apitoken', methods=['POST'])
 def return_weixin_sig():
     data = request.get_json()
@@ -81,10 +124,6 @@ def return_weixin_sig():
     if token:
         print('token in cache')
     else:
-        #sqldata = AppItem.query.filter(AppItem.Appid==app_id)
-        '''for data in sqldata:
-            result.append(data.to_dict())'''
-        # secret = result[0]['Appsecret']
         secret = '1b190b69588f2350dbe377a14d044eb3'
         wechat_r = requests.get(f'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={app_id}&secret={secret}')
         if wechat_r.status_code == 200:
@@ -96,7 +135,6 @@ def return_weixin_sig():
             raise Exception('calling token mistake')
         print('called new token')
     ticket = cache.get(app_id+'ticket')
-    #ticket = []
     if ticket:
         print("tickets in cache")
     else:
@@ -111,18 +149,10 @@ def return_weixin_sig():
         print('calling new ticket')
     jsapi_ticket = f'jsapi_ticket={ticket}&noncestr={noncestr}&timestamp={timestamp}&url={url}'
     signature = sha1(jsapi_ticket.encode('utf-8'))
-    '''print(f'ticket:{ticket}')
-    print(f'appid:{app_id}')
-    print(f'noncestr:{noncestr}')
-    print(f'timestamp:{timestamp}')
-    print(f'signature:{signature.hexdigest()}')
-    print(f'url:{url}')'''
-
     re_data = {'appId':app_id,'noncestr':noncestr,'timestamp':timestamp,'signature':signature.hexdigest()}
     
     return re_data
 
-    
 # return the invitation with given id
 @app.route('/invitation/get', methods=['POST'])
 def get_invitation_in_id():

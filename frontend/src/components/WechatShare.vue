@@ -25,16 +25,16 @@ export default {
             jsApiList: [
                 'onMenuShareAppMessage',
                 'onMenuShareTimeline',
-                'updateTimelineShareData', // 分享到朋友
+                'updateTimelineShareData',
                 'updateAppMessageShareData'
                 ] // 必填，需要使用的 JS 接口列表
           });
           wx.ready(() => {
             var shareData = {
-              title: '邀请函',
-              desc: '给您的邀请函',
+              title: '北京市盈科（深圳）律师事务所会议邀请函',
+              desc: '您好，您的会议邀请请查收，期待与您会面！',
               link: location.href.split('#')[0], // 分享后的地址
-              // imgUrl: '/usr/Invitaion_website/frontend/src/assets/pin.png'
+              imgUrl: 'http://www.junnuolc.cn/download/pin.png'
             };
             //点击要去分享
             wx.updateAppMessageShareData(shareData);

@@ -3,7 +3,7 @@
     <wechat-share></wechat-share>
     <div id="video_intro">
         <!--<video id="video" autobuffer controls webkit-playsinline playsinline x5-playsinline>
-            <source src='https://www.bilibili.com/video/av776569997?t=4.6' type="video/mp4">
+            <source src='../assets/welcome.mp4' type="video/mp4">
         </video>-->
         <iframe src="//player.bilibili.com/player.html?bvid=BV1AP4y1z7bN&page=1" scrolling="no" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
     </div>
@@ -33,10 +33,10 @@
         <img src="../assets/intro.png" class="picture_intro">
     </div>
     <div>
-        <img src="../assets/locInChina.jpg" class="picture_intro">
+        <img src="http://www.junnuolc.cn/download/locInChina.jpg" class="picture_intro">
     </div>
     <div>
-        <img src="../assets/locInWorld.jpg" class="picture_intro">
+        <img src="http://www.junnuolc.cn/download/locInWorld.jpg" class="picture_intro">
     </div>
   </div>
 </template>
@@ -44,10 +44,8 @@
 <script>
 import MapContainer from '@/components/MapContainer.vue'
 import WechatShare from  '@/components/WechatShare.vue'
-//import "vue3-video-play/dist/style.css"
-//import vue3VideoPlay from "vue3-video-play"
-// import axios from 'axios'
-import { reactive } from "vue";
+//import axios from 'axios'
+//import { reactive } from "vue";
 export default {
     name: "InvitationView",
     data() {
@@ -57,38 +55,7 @@ export default {
             guestCount: null,
             mainLawyer: null,
             teamAssistant: null,
-            contactNumber: null,
-            options:  reactive({
-                    width: "100%", //播放器高度
-                    color: "#000000", //主题色
-                    title: "", //视频名称
-                    /*sources: [
-                        {
-                            type: "video/mp4",
-                            src: require("../assets/aa.mp4")
-                        }
-                    ],*/
-                    src: "../static/aa.mp4",
-                    muted: false, //静音
-                    webFullScreen: false,
-                    speedRate: ["0.75", "1.0", "1.25", "1.5", "2.0"], //播放倍速
-                    autoPlay: false, //自动播放
-                    loop: false, //循环播放
-                    mirror: false, //镜像画面
-                    currentTime: 1,
-                    ligthOff: false, //关灯模式
-                    volume: 0.3, //默认音量大小
-                    control: true, //是否显示控制
-                    controlBtns: [
-                        "audioTrack",
-                        "quality",
-                        "speedRate",
-                        "volume",
-                        "setting",
-                        "pip",
-                        "pageFullScreen",
-                        "fullScreen",]
-            })
+            contactNumber: 13873246454,
         };
     },
     /*mounted() {
