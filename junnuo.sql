@@ -13,3 +13,6 @@ INSERT INTO invitations
 (invitation_id,guest_name,invitation_time,main_lawyer_name,assistant_name,contact_number,guest_count)
 VALUES
 ('invitation_lc','余紫清','2023-01-08','龙成','小何','13524586524',4);
+
+ALTER TABLE invitations
+ADD COLUMN invitation_hour INT NOT NULL;
