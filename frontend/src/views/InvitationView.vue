@@ -1,22 +1,21 @@
 <template>
     <div>
-    <!--<wechat-share domainSuffix='AllInvitation'></wechat-share>-->
+    <wechat-share></wechat-share>
     <div id="video_intro">
         <!--<video id="video" autobuffer controls webkit-playsinline playsinline x5-playsinline>
-            <source src="../assets/welcome.mp4#t=0.8" type="video/mp4">
+            <source src='../assets/welcome.mp4' type="video/mp4">
         </video>-->
-        <videoPlay
-        v-bind="options"/>
+        <iframe src="//player.bilibili.com/player.html?bvid=BV1AP4y1z7bN&page=1" scrolling="no" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
     </div>
     <div id="message">
         尊贵的当事人：您好！<br/>
         诚邀出席 【北京市盈科（深圳）律师事务所-咨询会议】<br/>
-        预订贵宾：{{ gutstName }} <br/>
-        预订时间：{{ invitationTime }} <br/>
-        预订人数：{{ guestCount }} <br/>
-        主办律师：{{ mainLawyer }} <br/>
-        团队助理：{{ teamAssistant }} <br/>
-        联系电话：<span id='number' v-touch="callPhone">{{ contactNumber }} </span><br/>
+        预订贵宾：{{gutstName}} <br/>
+        预订时间：{{invitationTime}} <br/>
+        预订人数：{{guestCount}} <br/>
+        主办律师：{{mainLawyer}} <br/>
+        团队助理：{{teamAssistant}} <br/>
+        联系电话：<span id='number' v-touch="callPhone"> {{contactNumber}} </span><br/>
         祝您往返途中平安，心情舒畅！
     </div>
     <br/>
@@ -44,11 +43,8 @@
 
 <script>
 import MapContainer from '@/components/MapContainer.vue'
-//import WechatShare from  '@/components/WechatShare.vue'
-import "vue3-video-play/dist/style.css"
-import videoPlay from "vue3-video-play"
+import WechatShare from  '@/components/WechatShare.vue'
 import axios from 'axios'
-import { reactive } from "vue";
 export default {
     name: "InvitationView",
     data() {
@@ -59,31 +55,6 @@ export default {
             mainLawyer: null,
             teamAssistant: null,
             contactNumber: null,
-            options:  reactive({
-                    width: "100%", //播放器高度
-                    color: "#000000", //主题色
-                    title: "", //视频名称
-                    src: "../assets/welcome.mp4", //视频源
-                    muted: false, //静音
-                    webFullScreen: false,
-                    speedRate: ["0.75", "1.0", "1.25", "1.5", "2.0"], //播放倍速
-                    autoPlay: false, //自动播放
-                    loop: false, //循环播放
-                    mirror: false, //镜像画面
-                    currentTime: 1,
-                    ligthOff: false, //关灯模式
-                    volume: 0.3, //默认音量大小
-                    control: true, //是否显示控制
-                    controlBtns: [
-                        "audioTrack",
-                        "quality",
-                        "speedRate",
-                        "volume",
-                        "setting",
-                        "pip",
-                        "pageFullScreen",
-                        "fullScreen",]
-            })
         };
     },
     mounted() {
@@ -102,7 +73,7 @@ export default {
                 this.guestCount = res.data.guest_count
                 this.mainLawyer = res.data.main_lawyer_name
                 this.teamAssistant = res.data.assistant_name
-                this.contactNumber = res.data.contact_number
+                this.contactNumber = Number(res.data.contact_number)
                 // eslint-disable-next-line
                 console.log(res)
                 }
@@ -112,7 +83,7 @@ export default {
             })
         }
     },
-    components: { MapContainer, videoPlay }
+    components: { MapContainer, WechatShare }
 }
 </script>
 
@@ -128,9 +99,6 @@ export default {
 
 #video_intro{
     background-color: black;
-}
-
-#video{
     width: 100%;
 }
 

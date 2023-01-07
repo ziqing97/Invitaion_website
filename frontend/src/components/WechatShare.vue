@@ -17,7 +17,7 @@ export default {
         axios.post('/wechat/apitoken', data).then(
         res => {
           wx.config({
-            debug: false, // 开启调试模式,调用的所有 api 的返回值会在客户端 alert 出来，若要查看传入的参数，可以在 pc 端打开，参数信息会通过 log 打出，仅在 pc 端时才会打印。
+            debug: false, // 开启调试模式,调用的所有 api 的返回值会在客户端 alert 出来
             appId: res['data']['appId'], // 必填，公众号的唯一标识
             timestamp: res['data']['timestamp'], // 必填，生成签名的时间戳
             nonceStr: res['data']['noncestr'], // 必填，生成签名的随机串
@@ -34,7 +34,7 @@ export default {
               title: '北京市盈科（深圳）律师事务所会议邀请函',
               desc: '您好，您的会议邀请请查收，期待与您会面！',
               link: location.href.split('#')[0], // 分享后的地址
-              imgUrl: 'http://www.junnuolc.cn/download/pin.png'
+              imgUrl: 'http://www.junnuolc.cn/download/logo.jpg'
             };
             //点击要去分享
             wx.updateAppMessageShareData(shareData);

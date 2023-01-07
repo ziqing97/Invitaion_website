@@ -3,7 +3,7 @@
     <div>
     添加成功！
     </div>
-    <div>
+    <div id='link'>
         <a @click="toData">邀请链接</a>
     </div>
 </div>
