@@ -16,3 +16,5 @@ VALUES
 
 ALTER TABLE invitations
 ADD COLUMN invitation_hour INT NOT NULL;
+
+DELETE FROM Person WHERE LastName = 'Wilson'
