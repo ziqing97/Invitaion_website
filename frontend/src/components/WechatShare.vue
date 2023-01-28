@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+<div></div>
 </template>
 
 <script>
@@ -10,7 +10,13 @@ export default {
     mounted() {
       this.getSignature();
     },
-    
+
+    props:{
+      title: String,
+      desc: String,
+      picLoc: String,
+    },
+
     methods:{
       getSignature () {
         var data = {'url': encodeURIComponent(location.href.split('#')[0])}
@@ -31,10 +37,10 @@ export default {
           });
           wx.ready(() => {
             var shareData = {
-              title: '北京市盈科（深圳）律师事务所会议邀请函',
-              desc: '您好，您的会议邀请请查收，期待与您会面！',
+              title: this.title,
+              desc: this.desc,
               link: location.href.split('#')[0], // 分享后的地址
-              imgUrl: 'http://www.junnuolc.cn/download/logo.jpg'
+              imgUrl: this.picLoc
             };
             //点击要去分享
             wx.updateAppMessageShareData(shareData);
