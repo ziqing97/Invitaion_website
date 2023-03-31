@@ -1,6 +1,6 @@
 <template>
     <div>
-    <wechat-share title="北京市盈科（深圳）律师事务所会议邀请函" desc="您好，您的会议邀请请查收，期待与您会面" picLoc='http://www.junnuolc.cn/download/logo.jpg'></wechat-share>
+    <!--<wechat-share title="北京市盈科（深圳）律师事务所会议邀请函" desc="您好，您的会议邀请请查收，期待与您会面" picLoc='http://www.junnuolc.cn/download/logo.jpg'></wechat-share>-->
     <div id="video_intro">
         <!--<video id="video" autobuffer controls webkit-playsinline playsinline x5-playsinline>
             <source src='../assets/welcome.mp4' type="video/mp4">
@@ -43,7 +43,7 @@
 
 <script>
 import MapContainer from '@/components/MapContainer.vue'
-import WechatShare from  '@/components/WechatShare.vue'
+// import WechatShare from  '@/components/WechatShare.vue'
 import axios from 'axios'
 export default {
     name: "InvitationView",
@@ -94,7 +94,7 @@ export default {
             })
         }
     },
-    components: { MapContainer, WechatShare }
+    components: { MapContainer }
 }
 </script>
 

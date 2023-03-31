@@ -53,7 +53,8 @@ const routes = [
     component: () => import('../views/InvitationView.vue'),
     meta: {
       auth: true,
-      title: '邀请函'
+      title: '北京市盈科（深圳）律师事务所会议邀请函',
+      icon: '../assets/logo.jpg'
     }
   },
   {
