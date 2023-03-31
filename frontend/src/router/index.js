@@ -54,7 +54,7 @@ const routes = [
     meta: {
       auth: true,
       title: '北京市盈科（深圳）律师事务所会议邀请函',
-      icon: '../assets/logo.jpg'
+      icon: '../assets/logo.ico'
     }
   },
   {

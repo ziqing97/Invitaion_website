@@ -8,6 +8,13 @@ name: 'App',
 watch: {
     '$route' (to) {
       document.title = to.meta.title || 'Your Website'
+      var link = document.querySelector("[rel~='icon']")
+      if (!link) {
+        link = document.createElement('link');
+        link.rel = 'icon';
+        document.head.appendChild(link);
+      }
+      link.setAttribute('href',"http://www.junnuolc.cn/download/logo.jpg")
     }
   },
 }

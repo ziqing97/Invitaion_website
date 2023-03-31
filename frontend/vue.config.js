@@ -9,5 +9,5 @@ module.exports = defineConfig({
       filename: 'index.html',
       title: '邀请函'
     }
-  }
+  },
 })
