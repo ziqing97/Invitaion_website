@@ -11,7 +11,7 @@
         尊贵的当事人：您好！<br/>
         诚邀出席 【北京市盈科（深圳）律师事务所-咨询会议】<br/>
         预订贵宾：{{gutstName}} <br/>
-        预订时间：{{invitationTime}} {{invitationHour}}:00 {{getWeekDay}} <br/>
+        预订时间：{{invitationTime}} {{invitationHour}}:{{invitationMinute}} {{getWeekDay}} <br/>
         预订人数：{{guestCount}} <br/>
         主办律师：{{mainLawyer}} <br/>
         团队助理：{{teamAssistant}} <br/>
@@ -52,6 +52,7 @@ export default {
             gutstName: null,
             invitationTime: null,
             invitationHour: null,
+            invitationMinute: null,
             guestCount: null,
             mainLawyer: null,
             teamAssistant: null,
@@ -81,6 +82,7 @@ export default {
                 this.gutstName = res.data.guest_name
                 this.invitationTime = res.data.invitation_time
                 this.invitationHour = res.data.invitation_hour
+                this.invitationMinute = res.data.invitation_minute
                 this.guestCount = res.data.guest_count
                 this.mainLawyer = res.data.main_lawyer_name
                 this.teamAssistant = res.data.assistant_name

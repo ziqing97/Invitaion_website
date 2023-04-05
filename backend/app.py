@@ -10,6 +10,7 @@ import requests
 import urllib.parse
 from hashlib import sha1
 from django.core.cache import cache
+from dateutil.parser import parse
 
 import config
 
@@ -41,6 +42,7 @@ class Invitation(db.Model, Todict):
     main_lawyer_name = db.Column(db.String(20), nullable=False)
     assistant_name = db.Column(db.String(20), nullable=True)
     invitation_hour = db.Column(db.Integer, nullable=False)
+    invitation_minute = db.Column(db.Integer, nullable=False)
 
 class Worker(db.Model, Todict):
     __tablename__ = 'workers'
@@ -178,12 +180,21 @@ def add_new_invitation():
         print("There is something empty, which is not allowed")
         return '-1'
     else:
+        utctimestr = data['invitation_time']
+        utctime = parse(utctimestr)
         date = data['invitation_time'][0:10]
         hour = data['invitation_time'][11:13]
+        hour = utctime.hour+8
+        if hour<0:
+            hour = hour+24
+        elif hour>24:
+            hour = hour-24
+        minute = data['invitation_time'][14:16]
         print(data['invitation_time'])
+        print(f'{hour}{minute}')
         new_invitation = Invitation(invitation_id=data['invitation_id'],guest_name=data['guest_name'],\
         invitation_time=date,guest_count=data['guest_count'],contact_number=data['contact_number'],\
-        main_lawyer_name=data['main_lawyer_name'],assistant_name=data['assistant_name'],invitation_hour=hour)
+        main_lawyer_name=data['main_lawyer_name'],assistant_name=data['assistant_name'],invitation_hour=hour,invitation_minute=minute)
         db.session.add(new_invitation)
         db.session.commit()
         db.session.close()
