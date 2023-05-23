@@ -82,7 +82,14 @@ export default {
                 this.gutstName = res.data.guest_name
                 this.invitationTime = res.data.invitation_time
                 this.invitationHour = res.data.invitation_hour
-                this.invitationMinute = res.data.invitation_minute
+                let minTemp = res.data.invitation_minute
+                if (minTemp<10){
+                    this.invitationMinute = "0".concat(minTemp.toString())
+                }
+                else{
+                    this.invitationMinute = res.data.invitation_minute
+                }
+
                 this.guestCount = res.data.guest_count
                 this.mainLawyer = res.data.main_lawyer_name
                 this.teamAssistant = res.data.assistant_name
