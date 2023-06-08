@@ -2,7 +2,7 @@
     <div>
     <!--<wechat-share title="北京市盈科（深圳）律师事务所会议邀请函" desc="您好，您的会议邀请请查收，期待与您会面" picLoc='http://www.junnuolc.cn/download/logo.jpg'></wechat-share>-->
     <div id="video_intro">
-        <!--<video id="video" autobuffer controls webkit-playsinline playsinline x5-playsinline>
+        <!--<video id="video" autoplay="autoplay" autobuffer controls webkit-playsinline playsinline x5-playsinline>
             <source src='../assets/welcome.mp4' type="video/mp4">
         </video>-->
         <iframe src="//player.bilibili.com/player.html?bvid=BV1AP4y1z7bN&page=1" scrolling="no" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
@@ -122,6 +122,7 @@ export default {
 #video_intro{
     background-color: black;
     width: 100%;
+    object-fit: fill
 }
 
 #locationdescription{
